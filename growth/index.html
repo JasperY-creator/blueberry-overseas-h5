@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>别人怎么把蓝莓卖到海外的——红河、永仁发家史</title>
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Serif+SC:wght@700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap">
+<style>
+  :root{
+    --ink:#1c2333;
+    --navy:#1e2b4f;
+    --blue:#2e5ac2;
+    --violet:#7a5bc7;
+    --cream:#faf7f0;
+    --card:#ffffff;
+    --line:#e7e0d3;
+    --gray:#6a6f7c;
+    --gray2:#9a9fae;
+    --green:#1e7b52;
+    --amber:#b96a1e;
+    --red:#c2574a;
+    --serif:"Noto Serif SC",Georgia,"Songti SC",serif;
+    --sans:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--sans);color:var(--ink);background:var(--cream);font-size:16px;line-height:1.8;-webkit-font-smoothing:antialiased;}
+  .app{max-width:760px;margin:0 auto;min-height:100vh;background:var(--cream);}
+  .view{display:none;}
+  .view.active{display:block;}
+
+  .home-hero{background:var(--navy);color:#fff;padding:48px 24px 28px;border-radius:0 0 26px 26px;position:relative;overflow:hidden;}
+  .home-hero::after{content:"";position:absolute;right:-70px;top:-70px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle at 40% 40%, rgba(143,176,255,.28), transparent 70%);}
+  .logo-row{display:flex;align-items:center;gap:9px;font-size:13px;letter-spacing:.14em;color:#a9bceb;margin-bottom:16px;}
+  .berry{width:18px;height:18px;flex:none;}
+  .berry circle{fill:currentColor;}
+  .home-hero h1{font-family:var(--serif);font-weight:900;font-size:clamp(27px,7vw,38px);line-height:1.3;letter-spacing:.01em;position:relative;z-index:1;}
+  .home-hero h1 .hl{color:#8fb0ff;}
+  .home-hero .sub{margin-top:12px;font-size:14.5px;color:#c6d2ef;position:relative;z-index:1;}
+  .verdict-strip{margin:18px 20px 0;background:#2a3a68;border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:14px 16px;display:flex;gap:12px;align-items:flex-start;position:relative;z-index:1;}
+  .verdict-strip .v-tag{flex:none;background:#8fb0ff;color:#14204a;font-size:12px;font-weight:700;border-radius:8px;padding:2px 10px;height:24px;line-height:20px;margin-top:3px;}
+  .verdict-strip p{font-size:14px;color:#e6ecfa;line-height:1.65;}
+  .verdict-strip p b{color:#fff;}
+
+  .home-body{padding:22px 18px 40px;}
+  .section-label{font-size:13px;color:var(--gray2);letter-spacing:.1em;margin:6px 4px 12px;}
+  .mod-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  @media (max-width:460px){ .mod-grid{grid-template-columns:1fr;} }
+  .mod{display:block;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 16px;text-decoration:none;color:inherit;position:relative;transition:transform .12s ease, box-shadow .12s ease;}
+  .mod:active{transform:scale(.98);}
+  .mod .m-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+  .mod .m-ico{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;}
+  .mod .m-ico svg{width:22px;height:22px;}
+  .mod .m-arrow{color:#c9c2b2;font-size:18px;line-height:1;}
+  .mod h3{font-size:17px;font-weight:700;margin-bottom:6px;}
+  .mod p{font-size:13px;color:var(--gray);line-height:1.6;}
+  .mod .m-badge{display:inline-block;margin-top:10px;font-size:11px;color:#8a6a2f;background:#f7ecd6;border-radius:20px;padding:1px 10px;font-weight:500;}
+  .m1 .m-ico{background:var(--blue);}
+  .m2 .m-ico{background:var(--green);}
+  .m3 .m-ico{background:var(--violet);}
+  .m4 .m-ico{background:var(--amber);}
+  .m5 .m-ico{background:var(--red);}
+  .home-foot{margin-top:26px;text-align:center;font-size:12px;color:var(--gray2);display:flex;flex-direction:column;gap:4px;}
+  .home-foot a{color:var(--blue);text-decoration:none;font-weight:500;}
+
+  .page-head{position:sticky;top:0;z-index:50;background:var(--navy);color:#fff;display:flex;align-items:center;gap:10px;padding:12px 16px;}
+  .page-head .back{background:rgba(255,255,255,.12);border:none;color:#fff;border-radius:10px;width:38px;height:38px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex:none;}
+  .page-head .back svg{width:18px;height:18px;}
+  .page-head .ph-title{font-size:16px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .page-head .ph-num{margin-left:auto;font-size:12px;color:#a9bceb;flex:none;}
+  .page-body{padding:22px 20px 30px;}
+  .page-body .lead{font-size:15.5px;margin-bottom:20px;}
+  .page-body .lead b{font-weight:700;}
+
+  .plain{background:#fdf6e3;border:1px solid #eeddb6;border-radius:14px;padding:14px 16px;margin:16px 0;font-size:14px;color:#6d5a2f;line-height:1.75;}
+  .plain .p-tag{display:inline-block;background:#e8c87a;color:#5c4508;font-size:11px;font-weight:700;border-radius:6px;padding:1px 8px;margin-bottom:6px;letter-spacing:.08em;}
+
+  .takeaway{background:var(--navy);color:#e8edf9;border-radius:16px;padding:18px 20px;margin:20px 0;display:flex;gap:14px;align-items:flex-start;}
+  .takeaway .t-tag{flex:none;background:#8fb0ff;color:#14204a;font-size:12px;font-weight:700;border-radius:8px;padding:2px 10px;height:24px;line-height:20px;margin-top:2px;white-space:nowrap;}
+  .takeaway p{font-size:15px;line-height:1.7;color:#dbe4f7;}
+  .takeaway p b{color:#fff;}
+
+  .warn{background:#fdeee2;border:1px solid #f2cdaa;border-radius:14px;padding:14px 16px;margin:16px 0;font-size:14px;color:#8a4c12;line-height:1.75;}
+  .warn .w-tag{display:inline-block;background:#e8a06a;color:#5c2c06;font-size:11px;font-weight:700;border-radius:6px;padding:1px 8px;margin-bottom:6px;letter-spacing:.08em;}
+
+  /* 时间线（成长记） */
+  .timeline{display:flex;flex-direction:column;margin-top:4px;}
+  .tl-row{display:flex;gap:12px;position:relative;padding-bottom:16px;}
+  .tl-row::before{content:"";position:absolute;left:15px;top:32px;bottom:0;width:2px;background:var(--line);}
+  .tl-row:last-child::before{display:none;}
+  .tl-dot{flex:none;width:32px;height:32px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;position:relative;z-index:1;font-variant-numeric:tabular-nums;}
+  .tl-dot.tl-g{background:var(--green);}
+  .tl-dot.tl-hot{background:var(--red);}
+  .tl-body h4{font-size:15px;font-weight:700;margin:3px 0 2px;}
+  .tl-body h4 .yr{color:var(--blue);font-family:var(--serif);}
+  .tl-body p{font-size:13.5px;color:var(--gray);}
+  .tl-body .tl-src{font-size:11px;color:var(--gray2);margin-top:3px;}
+
+  /* 成绩单 */
+  .score{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:14px;}
+  .score .s-top{display:flex;align-items:center;gap:8px;margin-bottom:10px;flex-wrap:wrap;}
+  .score h4{font-size:16px;font-weight:700;}
+  .score .s-tag{font-size:11px;font-weight:700;border-radius:6px;padding:1px 8px;}
+  .s-tag.red{background:#fbeae5;color:var(--red);}
+  .s-tag.green{background:#e3f3ea;color:#17603f;}
+  .s-num-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:8px;}
+  .s-num{flex:1;min-width:130px;border:1px solid var(--line);border-radius:12px;padding:12px;}
+  .s-num .n-k{font-size:11.5px;color:var(--gray2);margin-bottom:3px;}
+  .s-num .n-v{font-family:var(--serif);font-weight:900;font-size:22px;color:var(--blue);line-height:1.2;font-variant-numeric:tabular-nums;}
+  .s-num .n-v small{font-size:.5em;color:var(--gray2);font-weight:400;}
+  .score p{font-size:13.5px;color:var(--gray);}
+  .score .s-src{font-size:11px;color:var(--gray2);margin-top:8px;}
+
+  /* 密码卡 */
+  .key{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:14px;}
+  .key .k-num{width:32px;height:32px;border-radius:10px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:700;font-size:15px;margin-bottom:8px;}
+  .key h4{font-size:16px;font-weight:700;margin-bottom:6px;}
+  .key p{font-size:13.5px;color:var(--gray);}
+  .key .k-evid{margin-top:8px;border-top:1px dashed var(--line);padding-top:8px;font-size:12px;color:var(--gray2);line-height:1.8;}
+  .key .k-evid b{color:var(--gray);}
+
+  /* 抄作业 */
+  .hw{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:14px;display:flex;gap:14px;align-items:flex-start;}
+  .hw .h-num{flex:none;width:34px;height:34px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:700;font-size:15px;margin-top:2px;}
+  .hw .h-body h4{font-size:15.5px;font-weight:700;margin-bottom:4px;}
+  .hw .h-body p{font-size:13.5px;color:var(--gray);}
+  .hw .h-body .h-src{font-size:11px;color:var(--gray2);margin-top:5px;}
+
+  .page-nav{display:flex;gap:10px;padding:6px 20px 34px;}
+  .page-nav button{flex:1;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:12px;padding:12px;font-size:13.5px;font-weight:600;cursor:pointer;font-family:var(--sans);display:flex;align-items:center;justify-content:center;gap:6px;min-height:46px;}
+  .page-nav .pn-next{background:var(--navy);border-color:var(--navy);color:#fff;}
+
+  .src-list{display:flex;flex-direction:column;gap:8px;margin-top:6px;}
+  .src-list div{font-size:13px;color:var(--gray);display:flex;gap:8px;line-height:1.7;}
+  .src-list b{color:var(--violet);flex:none;font-weight:700;}
+  .disclaimer{margin-top:20px;border-top:1px solid var(--line);padding-top:14px;font-size:12px;color:var(--gray2);line-height:1.9;}
+
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*{transition:none!important;}}
+</style>
+</head>
+<body>
+<div class="app" id="app">
+
+  <!-- ================= 首页 ================= -->
+  <section class="view" id="view-home">
+    <div class="home-hero">
+      <div class="logo-row">
+        <svg class="berry" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13.5" r="8.5" fill="currentColor"/><path d="M12 4.2c1.6-2 3.4-2.9 5.4-2.7-.3 2.2-2.1 3.6-5.4 3.4-3.3.2-5.1-1.2-5.4-3.4 2-.2 3.8.7 5.4 2.7z" fill="currentColor"/></svg>
+        真实案例 · 公开资料
+      </div>
+      <h1>别人怎么把蓝莓<br><span class="hl">卖到海外的</span></h1>
+      <p class="sub">红河、永仁两大出口大户的发家史，每一步都有公开报道可查。</p>
+      <div class="verdict-strip">
+        <span class="v-tag">先看结论</span>
+        <p><b>没有谁是一夜成的。</b>共同的路就一条：<b>先做规模，再提品质，最后出海</b>——政府在前面搭桥，龙头在前面开路，农户跟着抱团。</p>
+      </div>
+    </div>
+    <div class="home-body">
+      <div class="section-label">五个模块，建议按顺序看</div>
+      <div class="mod-grid">
+        <a class="mod m1" href="#/m1">
+          <div class="m-top">
+            <span class="m-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+            <span class="m-arrow">›</span>
+          </div>
+          <h3>红河成长记</h3>
+          <p>从 2013 年试种，到 2024 年全国出口第一</p>
+          <span class="m-badge">先看这个</span>
+        </a>
+        <a class="mod m2" href="#/m2">
+          <div class="m-top">
+            <span class="m-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg></span>
+            <span class="m-arrow">›</span>
+          </div>
+          <h3>永仁成长记</h3>
+          <p>小县抱团，两年蹚出出口路</p>
+        </a>
+        <a class="mod m3" href="#/m3">
+          <div class="m-top">
+            <span class="m-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5L12 16l-4.9 2.6.9-5.5-4-3.9 5.5-.8z"/></svg></span>
+            <span class="m-arrow">›</span>
+          </div>
+          <h3>他们现在多大</h3>
+          <p>出口成绩单，一个比一个亮</p>
+        </a>
+        <a class="mod m4" href="#/m4">
+          <div class="m-top">
+            <span class="m-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h6M9 12h6M9 18h4"/><path d="M4 4h16v16H4z"/></svg></span>
+            <span class="m-arrow">›</span>
+          </div>
+          <h3>做对的五件事</h3>
+          <p>他们成功的共同密码</p>
+        </a>
+        <a class="mod m5" href="#/m5">
+          <div class="m-top">
+            <span class="m-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V9M10 19V5M16 19v-8M22 19H2"/></svg></span>
+            <span class="m-arrow">›</span>
+          </div>
+          <h3>你能抄的作业</h3>
+          <p>这些经验放到宜良，怎么用</p>
+        </a>
+      </div>
+      <div class="home-foot">
+        <span>全部内容来自政府官网、人民日报、新华网等公开报道</span>
+        <a href="#/src">查看数据来源</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 模块 1：红河成长记 ================= -->
+  <section class="view" id="view-m1">
+    <div class="page-head">
+      <button class="back" data-back aria-label="返回"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <span class="ph-title">红河成长记</span>
+      <span class="ph-num">模块 1 / 5</span>
+    </div>
+    <div class="page-body">
+      <p class="lead">红河州（蒙自、建水一带），现在全国蓝莓出口第一。<b>它从 2013 年才开始种蓝莓，真正出口是 2022 年</b>——前后也就十年。</p>
+
+      <div class="timeline">
+        <div class="tl-row"><div class="tl-dot">13</div><div class="tl-body"><h4><span class="yr">2013 年</span>：第一株蓝莓试种成功</h4><p>建水县引进美国浆果巨头"卓莓公司"，建起第一批设施栽培基地。本地农民第一批进基地打工、学技术——<b>红河的蓝莓技术是跟老外学出来的</b>。</p><div class="tl-src">来源：新华网（2025-12-20）、红河州政府（2025-12-22）</div></div></div>
+        <div class="tl-row"><div class="tl-dot">21</div><div class="tl-body"><h4><span class="yr">2021 年</span>："622"联农带农模式铺开</h4><p>农户出土地和劳力，企业出技术、负责找市场，村集体垫资买苗，销售收入按比例分成。农户零风险入伙，<b>规模一下就铺开了</b>。</p><div class="tl-src">来源：红河州政府（2025-12-24）</div></div></div>
+        <div class="tl-row"><div class="tl-dot tl-g">22</div><div class="tl-body"><h4><span class="yr">2022 年</span>：第一批蓝莓出口新加坡</h4><p>这是红河蓝莓"第一次走出国门"。量不大，但是个开始——<b>小单试水，跑通流程</b>。第二年（2023），蒙自翔悦等贸易公司跟进，陆续打开印尼、新加坡、越南。</p><div class="tl-src">来源：云南省农业农村厅（2026-01）、云南单一窗口（2025-03）</div></div></div>
+        <div class="tl-row"><div class="tl-dot tl-g">24</div><div class="tl-body"><h4><span class="yr">2024 年</span>：跃升全国出口第一</h4><p>全年出口 1425 吨，占全国一半，卖到阿联酋、日本等 12 个国家。蒙自海关开通"蓝盾快检"：<b>6 小时完成检验检疫、空运 40 小时直达海外</b>——物流和政府效率一起跟上了。</p><div class="tl-src">来源：红河州农业农村局（2025-10）</div></div></div>
+        <div class="tl-row"><div class="tl-dot tl-hot">25</div><div class="tl-body"><h4><span class="yr">2025 年</span>：品牌 + 种业，再上台阶</h4><p>发布"红河蓝莓"区域公用品牌（广告语："爱护眼睛，多吃云南红河蓝莓"）；此前已成立"中国南方蓝莓创新中心"自己育种，摆脱种苗依赖。1-9 月出口 2060 吨、同比涨 78%、货值近 1 亿元。</p><div class="tl-src">来源：红河日报（2025-12-26）、红河州政府（2025-12-23）</div></div></div>
+      </div>
+
+      <div class="plain">
+        <span class="p-tag">大白话</span>
+        红河的故事就是<b>"引进来、种出来、卖出去"</b>：先让外国公司来种（学技术），再让农户一起种（扩规模），最后政府把出口的路修通（快检、品牌），一柜一柜卖到国外。
+      </div>
+
+      <div class="takeaway">
+        <span class="t-tag">结论</span>
+        <p><b>红河用了约十年：前 8 年都在种果和攒规模，真正的出口爆发只用了 3 年（2022→2025）。</b>前期的"慢"是为了后期的"快"。</p>
+      </div>
+    </div>
+    <div class="page-nav">
+      <button data-goto="home">返回首页</button>
+      <button class="pn-next" data-goto="m2">下一个：永仁成长记</button>
+    </div>
+  </section>
+
+  <!-- ================= 模块 2：永仁成长记 ================= -->
+  <section class="view" id="view-m2">
+    <div class="page-head">
+      <button class="back" data-back aria-label="返回"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <span class="ph-title">永仁成长记</span>
+      <span class="ph-num">模块 2 / 5</span>
+    </div>
+    <div class="page-body">
+      <p class="lead">永仁是个小县，种蓝莓时间也不长。<b>它跟红河的路不一样：不靠一家大公司，靠"全县抱团"</b>——这条对宜良更有参考价值。</p>
+
+      <div class="timeline">
+        <div class="tl-row"><div class="tl-dot">22</div><div class="tl-body"><h4><span class="yr">2022 年</span>：全县"组织化"方案出台</h4><p>永仁县发布农业全领域组织化方案：把全县 340 个专业合作社分类整合，统一引进新品种、新技术，让农户"抱团生产、抱团卖"。</p><div class="tl-src">来源：永仁县政府（2022-10）</div></div></div>
+        <div class="tl-row"><div class="tl-dot">23</div><div class="tl-body"><h4><span class="yr">2023 年</span>：龙头企业批量进场</h4><p>光筑农业、旺悦莓、云南莓族等龙头企业被引进来，流转土地建数字蓝莓园。比如旺悦莓每年给周边村支付 500 多万元土地流转金，带动 300 多人务工——<b>地是农民的地，技术和渠道是公司的</b>。</p><div class="tl-src">来源：楚雄州政府（2023-05）、云南网（2024-06）</div></div></div>
+        <div class="tl-row"><div class="tl-dot">24</div><div class="tl-body"><h4><span class="yr">2024 年</span>：企业联盟 + 外贸服务中心</h4><p>县里牵头成立"蓝莓企业联盟协会"（20 家企业、31 名个人入会），一个声音对外；引入第三方公司建外贸综合服务中心，<b>帮企业办出口资质</b>——很多小企业自己不会办，政府来办。</p><div class="tl-src">来源：楚雄州农业农村局（2026-08）</div></div></div>
+        <div class="tl-row"><div class="tl-dot tl-g">25</div><div class="tl-body"><h4><span class="yr">2025 年</span>：出口放量</h4><p>龙头企业光筑农业 2024 年底启动蓝莓出口，到 2025 年出口超 300 吨、<b>每周发 15 个货柜</b>，卖到马来西亚、泰国、印尼、新加坡等 7 国，占其旗舰基地总产量的 10%。全县抱团后，蓝莓平均收购价还涨了约 10.5%。</p><div class="tl-src">来源：永仁县政府（2025-04、2026-09）</div></div></div>
+      </div>
+
+      <div class="plain">
+        <span class="p-tag">大白话</span>
+        永仁的路是<b>"一捆筷子掰不断"</b>：一家小公司出口？办证都费劲。20 家企业捆成联盟、政府出面办证、龙头企业打头阵——<b>抱团才走得出国门</b>。
+      </div>
+
+      <div class="takeaway">
+        <span class="t-tag">结论</span>
+        <p><b>永仁出口从启动到放量只用了一年多。</b>它的秘密不是种得多好，而是<b>组织得好</b>：龙头开路、联盟抱团、政府办证。</p>
+      </div>
+    </div>
+    <div class="page-nav">
+      <button data-goto="m1">上一个</button>
+      <button class="pn-next" data-goto="m3">下一个：他们现在多大</button>
+    </div>
+  </section>
+
+  <!-- ================= 模块 3：他们现在多大 ================= -->
+  <section class="view" id="view-m3">
+    <div class="page-head">
+      <button class="back" data-back aria-label="返回"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <span class="ph-title">他们现在多大</span>
+      <span class="ph-num">模块 3 / 5</span>
+    </div>
+    <div class="page-body">
+      <p class="lead">看看他们现在的"成绩单"，就知道这条路能走多大。</p>
+
+      <div class="score">
+        <div class="s-top"><h4>红河州 · 全国出口第一</h4><span class="s-tag red">老大</span></div>
+        <div class="s-num-row">
+          <div class="s-num"><div class="n-k">2025 年出口量</div><div class="n-v">2,307<small> 吨</small></div></div>
+          <div class="s-num"><div class="n-k">占全国出口</div><div class="n-v">50%<small> 以上</small></div></div>
+          <div class="s-num"><div class="n-k">卖到多少国</div><div class="n-v">15<small> 个</small></div></div>
+        </div>
+        <p>2025 年 1-9 月出口货值近 1 亿元，同比涨 78%；全州种植面积超 15 万亩，蓝莓已长成"百亿产业"。</p>
+        <div class="s-src">来源：人民日报中国城市报（2026-04）、红河日报（2025-12）、红河州政府（2025-12）</div>
+      </div>
+
+      <div class="score">
+        <div class="s-top"><h4>永仁县 · 出口新星</h4><span class="s-tag green">黑马</span></div>
+        <div class="s-num-row">
+          <div class="s-num"><div class="n-k">出口超</div><div class="n-v">300<small> 吨</small></div></div>
+          <div class="s-num"><div class="n-k">每周货柜</div><div class="n-v">15<small> 柜</small></div></div>
+          <div class="s-num"><div class="n-k">卖到</div><div class="n-v">7<small> 国</small></div></div>
+        </div>
+        <p>主要市场：马来西亚、泰国、印尼、新加坡等东南亚 7 国。出口量占其旗舰基地（爱莓庄）总产量的 10%，"永仁蓝莓"入选全国名特优新农产品名录。</p>
+        <div class="s-src">来源：永仁县政府（2025-04）、楚雄州政府（2026-08）</div>
+      </div>
+
+      <div class="score">
+        <div class="s-top"><h4>邻县参照 · 大理弥渡</h4><span class="s-tag green">正在起步</span></div>
+        <div class="s-num-row">
+          <div class="s-num"><div class="n-k">2026 年首单</div><div class="n-v">8.28<small> 吨</small></div></div>
+          <div class="s-num"><div class="n-k">目的地</div><div class="n-v">新加坡</div></div>
+        </div>
+        <p>大理弥渡的维先农业 2026 年刚完成第一次出口（8.28 吨到新加坡），还收到泰国、越南的咨询订单——<b>很多县还站在红河、永仁 2022 年那个起点上</b>。</p>
+        <div class="s-src">来源：云南省农业农村厅（2026-04）、中国新闻网（2026-04）</div>
+      </div>
+
+      <div class="takeaway">
+        <span class="t-tag">结论</span>
+        <p><b>红河做到了"吨"级（2300 吨/年），永仁做到了"柜"级（15 柜/周）。</b>你现在是"斤"级——目标先向永仁看齐：出口占产量 10%。</p>
+      </div>
+    </div>
+    <div class="page-nav">
+      <button data-goto="m2">上一个</button>
+      <button class="pn-next" data-goto="m4">下一个：做对的五件事</button>
+    </div>
+  </section>
+
+  <!-- ================= 模块 4：做对的五件事 ================= -->
+  <section class="view" id="view-m4">
+    <div class="page-head">
+      <button class="back" data-back aria-label="返回"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <span class="ph-title">做对的五件事</span>
+      <span class="ph-num">模块 4 / 5</span>
+    </div>
+    <div class="page-body">
+      <p class="lead">红河、永仁各走各的路，但<b>成功密码是同一套</b>。五件事，件件有出处。</p>
+
+      <div class="key"><div class="k-num">1</div><h4>引龙头：让专业的人干专业的事</h4><p>红河 2013 年引进美国卓莓公司；永仁引进光筑、旺悦莓等龙头。技术、渠道、市场，都靠龙头企业先蹚出来，本地人跟着学。</p><div class="k-evid"><b>证据：</b>红河首批蓝莓基地就是卓莓建的（新华网 2025-12）；永仁光筑农业建起"从一棵苗到一颗果"的全链条数字化体系（永仁县政府 2025-11）。</div></div>
+
+      <div class="key"><div class="k-num">2</div><h4>联农户：把散户变成"一个供货商"</h4><p>红河的"622"模式（农户出地出力、企业出技术找市场、村集体垫资）；永仁的合作社整合 + 企业联盟。散户抱团才有规模、才能接大单。</p><div class="k-evid"><b>证据：</b>永仁整合全县经营主体后，蓝莓平均收购单价提升约 10.5%（永仁县政府 2026-09）；联盟协会吸纳 20 家企业、31 人（楚雄州农业农村局 2026-08）。</div></div>
+
+      <div class="key"><div class="k-num">3</div><h4>政府搭台：办证、快检、品牌全包</h4><p>永仁引入外贸综合服务中心，帮 7 家企业办出口资质；蒙自海关开"蓝盾快检"绿色通道，6 小时验完、空运 40 小时到海外；两地政府都牵头做区域公用品牌、组织参展。</p><div class="k-evid"><b>证据：</b>蓝盾快检（红河州农业农村局 2025-10）；外贸服务中心（楚雄州政府 2026-08）；品牌宣传活动 12 场次（永仁县政府 2026-09）。</div></div>
+
+      <div class="key"><div class="k-num">4</div><h4>先小后大：先用小单试水，再整柜放量</h4><p>红河 2022 年第一单出口新加坡（小批量），2024 年才放量到全国第一；永仁也是从第一柜试起，一年做到周 15 柜。没有谁是第一单就发大柜的。</p><div class="k-evid"><b>证据：</b>红河 2022 首单新加坡（云南省农业农村厅 2026-01）；永仁出口超 300 吨、周 15 柜（永仁县政府 2025-04）。</div></div>
+
+      <div class="key"><div class="k-num">5</div><h4>科技 + 品牌：把"土特产"变成"名牌货"</h4><p>红河 2024 年成立南方蓝莓创新中心自己育种，2025 年发布区域公用品牌；永仁用 AI 预测产量、扫码溯源、建区域公共品牌。品质稳定 + 有名有姓，海外才认。</p><div class="k-evid"><b>证据：</b>南方蓝莓创新中心（红河州政府 2025-12-23）；"红河蓝莓"品牌发布会（红河州农业农村局 2025-10）；永仁数字化体系（永仁县政府 2025-11）。</div></div>
+
+      <div class="takeaway">
+        <span class="t-tag">结论</span>
+        <p><b>这五件事，前两件（龙头、抱团）是根基，中间一件（政府搭台）是加速器，最后两件（小单试水、品牌科技）是临门一脚。</b>你的作战计划已经按这个顺序排好了。</p>
+      </div>
+    </div>
+    <div class="page-nav">
+      <button data-goto="m3">上一个</button>
+      <button class="pn-next" data-goto="m5">下一个：你能抄的作业</button>
+    </div>
+  </section>
+
+  <!-- ================= 模块 5：你能抄的作业 ================= -->
+  <section class="view" id="view-m5">
+    <div class="page-head">
+      <button class="back" data-back aria-label="返回"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <span class="ph-title">你能抄的作业</span>
+      <span class="ph-num">模块 5 / 5</span>
+    </div>
+    <div class="page-body">
+      <p class="lead">这套经验放到宜良、放到你身上，<b>四步抄作业</b>。</p>
+
+      <div class="hw"><div class="h-num">1</div><div class="h-body">
+        <h4>找"龙头"：宜良本地就有现成的</h4>
+        <p>红河靠卓莓起家——你不需要引进外国公司，<b>宜良北古城镇的蓝莓基地已经在出口迪拜</b>，马街镇企业手里有 50 多个出口资质、渠道覆盖新加坡/马来西亚/香港/迪拜。去谈供货合作、借资质，等于站在巨人的肩膀上。</p>
+        <div class="h-src">依据：宜良县政府（2025-02、2025-05）——红河引龙头的翻版</div>
+      </div></div>
+
+      <div class="hw"><div class="h-num">2</div><div class="h-body">
+        <h4>抱团：别单打独斗</h4>
+        <p>永仁"联盟+合作社"的招数，你也用得上：找宜良县农业农村局、蓝莓种植合作社，看有没有产业联盟或统一的出口组织。<b>一家办证慢，大家一起办，政府也愿意帮。</b></p>
+        <div class="h-src">依据：永仁企业联盟协会模式（楚雄州农业农村局 2026-08）</div>
+      </div></div>
+
+      <div class="hw"><div class="h-num">3</div><div class="h-body">
+        <h4>吃政策：海关和县里的便宜，不占白不占</h4>
+        <p>红河的 6 小时快检、永仁的外贸服务中心，都是政府建的"高速公路"。<b>去昆明海关问清楚宜良/昆明有没有对应的快检通道、去县里问有没有外贸帮扶政策</b>——这是你 50 万预算之外白捡的加速。</p>
+        <div class="h-src">依据：蒙自海关"蓝盾快检"（红河州农业农村局 2025-10）</div>
+      </div></div>
+
+      <div class="hw"><div class="h-num">4</div><div class="h-body">
+        <h4>按他们的节奏走：小单→整柜→品牌</h4>
+        <p>红河 2022 年第一单、2024 年第一；永仁一年周 15 柜；大理弥渡 2026 年还在发首单（8 吨到新加坡）。<b>你现在的任务就是"发首单"</b>——几百斤大果空运香港/新加坡，把这个"1"写出来，后面都是顺水推舟。</p>
+        <div class="h-src">依据：红河首单（云南省农业农村厅 2026-01）、大理首单（云南省农业农村厅 2026-04）</div>
+      </div></div>
+
+      <div class="plain">
+        <span class="p-tag">大白话</span>
+        抄作业不是照搬：<b>红河那套是"超级工厂"玩法（要几百亩地、几千万投入），永仁那套是"抱团出海"玩法（适合小县、小基地）</b>——你是小基地，抄永仁 + 借宜良现成渠道，最划算。
+      </div>
+
+      <div class="takeaway">
+        <span class="t-tag">结论</span>
+        <p><b>一句话：龙头在宜良（去找），模式照永仁（去抱团），政策问海关（去登记），首单按红河（先小后大）。</b></p>
+      </div>
+    </div>
+    <div class="page-nav">
+      <button data-goto="m4">上一个</button>
+      <button class="pn-next" data-goto="home">看完了，回首页</button>
+    </div>
+  </section>
+
+  <!-- ================= 数据来源 ================= -->
+  <section class="view" id="view-src">
+    <div class="page-head">
+      <button class="back" data-back aria-label="返回"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <span class="ph-title">数据来源</span>
+    </div>
+    <div class="page-body">
+      <p class="lead">本页全部内容来自<b>公开报道</b>（政府官网、央媒、省媒），检索时间：2026 年 10 月。</p>
+      <div class="src-list">
+        <div><b>01</b><span>红河州政府官网（2025-12-22、12-23、12-24、12-25）——2013 年试种、"622"模式、创新中心、百亿产业</span></div>
+        <div><b>02</b><span>新华网（2025-12-20）——建水引进美国卓莓公司，第一批基地和农民工人</span></div>
+        <div><b>03</b><span>云南省农业农村厅（2026-01-19）——2022 年首批出口新加坡、2024 年全国第一、2025 年 1-9 月 +77.9%</span></div>
+        <div><b>04</b><span>红河州农业农村局（2025-10-27、10-29）——出口 1425 吨占全国 50%、蓝盾快检 6 小时、空运 40 小时、区域品牌</span></div>
+        <div><b>05</b><span>红河日报（2025-12-26）——2025 年 1-9 月蒙自海关监管出口 2060 吨、货值近 1 亿</span></div>
+        <div><b>06</b><span>人民日报中国城市报（2026-04-06）——2025 年出口 2307 吨占全国 50% 以上、15 个国家和地区</span></div>
+        <div><b>07</b><span>中国(云南)国际贸易单一窗口（2025-03）——蒙自翔悦 2023 年开展出口业务</span></div>
+        <div><b>08</b><span>永仁县政府（2022-10、2023-05、2025-04、2025-11、2026-09）——组织化方案、光筑出口 300 吨/周 15 柜/7 国、数字化体系、收购价 +10.5%</span></div>
+        <div><b>09</b><span>楚雄州政府（2026-08-21）、楚雄州农业农村局（2026-08-24）——企业联盟协会、外贸综合服务中心帮 7 家企业办证</span></div>
+        <div><b>10</b><span>云南网（2024-06-18）——幸福源数字蓝莓产业园三方分工模式</span></div>
+        <div><b>11</b><span>云南省农业农村厅（2026-04-01）、中国新闻网（2026-04）——大理弥渡维先农业首次出口新加坡 8.28 吨</span></div>
+        <div><b>12</b><span>宜良县政府（2025-02-18、2025-05-13）——马街镇 50 余个出口资质、北古城镇蓝莓出口迪拜</span></div>
+      </div>
+      <div class="disclaimer">
+        本页所有"怎么成长起来的"叙述均依据上述公开报道归纳，未添加未经证实的细节；个别数字（如 2025 年出口货值"近 1 亿"）为报道原文口径。红河、永仁的具体做法仅作参考，落地请以你所在地现行政策和市场情况为准。
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+/* ===== 简易路由：hash 切视图 ===== */
+var VIEWS = ['home','m1','m2','m3','m4','m5','src'];
+function currentView(){
+  var h = location.hash.replace(/^#\//,'');
+  return VIEWS.indexOf(h) >= 0 ? h : 'home';
+}
+function render(){
+  var v = currentView();
+  VIEWS.forEach(function(id){
+    var el = document.getElementById('view-' + id);
+    if(el){ el.classList.toggle('active', id === v); }
+  });
+  window.scrollTo(0,0);
+}
+window.addEventListener('hashchange', render);
+render();
+
+document.addEventListener('click', function(e){
+  var back = e.target.closest('[data-back]');
+  if(back){
+    e.preventDefault();
+    location.hash = '#/home';
+    return;
+  }
+  var goto = e.target.closest('[data-goto]');
+  if(goto){
+    e.preventDefault();
+    location.hash = '#/' + goto.getAttribute('data-goto');
+    return;
+  }
+});
+</script>
+</body>
+</html>
