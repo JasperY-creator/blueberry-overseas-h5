@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>云南蓝莓出口企业样板——跟着"人"学，别跟着"地方"学</title>
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Serif+SC:wght@700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap">
+<style>
+  :root{
+    --ink:#1c2333;
+    --navy:#1e2b4f;
+    --blue:#2e5ac2;
+    --violet:#7a5bc7;
+    --cream:#faf7f0;
+    --card:#ffffff;
+    --line:#e7e0d3;
+    --gray:#6a6f7c;
+    --gray2:#9a9fae;
+    --green:#1e7b52;
+    --amber:#b96a1e;
+    --red:#c2574a;
+    --serif:"Noto Serif SC",Georgia,"Songti SC",serif;
+    --sans:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--sans);color:var(--ink);background:var(--cream);font-size:16px;line-height:1.8;-webkit-font-smoothing:antialiased;}
+  .app{max-width:760px;margin:0 auto;min-height:100vh;background:var(--cream);}
+  .view{display:none;}
+  .view.active{display:block;}
+
+  .home-hero{background:var(--navy);color:#fff;padding:48px 24px 28px;border-radius:0 0 26px 26px;position:relative;overflow:hidden;}
+  .home-hero::after{content:"";position:absolute;right:-70px;top:-70px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle at 40% 40%, rgba(143,176,255,.28), transparent 70%);}
+  .logo-row{display:flex;align-items:center;gap:9px;font-size:13px;letter-spacing:.14em;color:#a9bceb;margin-bottom:16px;}
+  .berry{width:18px;height:18px;flex:none;}
+  .berry circle{fill:currentColor;}
+  .home-hero h1{font-family:var(--serif);font-weight:900;font-size:clamp(27px,7vw,38px);line-height:1.3;letter-spacing:.01em;position:relative;z-index:1;}
+  .home-hero h1 .hl{color:#8fb0ff;}
+  .home-hero .sub{margin-top:12px;font-size:14.5px;color:#c6d2ef;position:relative;z-index:1;}
+  .verdict-strip{margin:18px 20px 0;background:#2a3a68;border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:14px 16px;display:flex;gap:12px;align-items:flex-start;position:relative;z-index:1;}
+  .verdict-strip .v-tag{flex:none;background:#8fb0ff;color:#14204a;font-size:12px;font-weight:700;border-radius:8px;padding:2px 10px;height:24px;line-height:20px;margin-top:3px;}
+  .verdict-strip p{font-size:14px;color:#e6ecfa;line-height:1.65;}
+  .verdict-strip p b{color:#fff;}
+
+  .home-body{padding:22px 18px 40px;}
+  .section-label{font-size:13px;color:var(--gray2);letter-spacing:.1em;margin:6px 4px 12px;}
+  .mod-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  @media (max-width:460px){ .mod-grid{grid-template-columns:1fr;} }
+  .mod{display:block;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 16px;text-decoration:none;color:inherit;position:relative;transition:transform .12s ease, box-shadow .12s ease;}
+  .mod:active{transform:scale(.98);}
+  .mod .m-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+  .mod .m-ico{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;}
+  .mod .m-ico svg{width:22px;height:22px;}
+  .mod .m-arrow{color:#c9c2b2;font-size:18px;line-height:1;}
+  .mod h3{font-size:17px;font-weight:700;margin-bottom:6px;}
+  .mod p{font-size:13px;color:var(--gray);line-height:1.6;}
+  .mod .m-badge{display:inline-block;margin-top:10px;font-size:11px;color:#8a6a2f;background:#f7ecd6;border-radius:20px;padding:1px 10px;font-weight:500;}
+  .m1 .m-ico{background:var(--green);}
+  .m2 .m-ico{background:var(--blue);}
+  .m3 .m-ico{background:var(--violet);}
+  .m4 .m-ico{background:var(--amber);}
+  .m5 .m-ico{background:var(--red);}
+  .home-foot{margin-top:26px;text-align:center;font-size:12px;color:var(--gray2);display:flex;flex-direction:column;gap:4px;}
+  .home-foot a{color:var(--blue);text-decoration:none;font-weight:500;}
+
+  .page-head{position:sticky;top:0;z-index:50;background:var(--navy);color:#fff;display:flex;align-items:center;gap:10px;padding:12px 16px;}
+  .page-head .back{background:rgba(255,255,255,.12);border:none;color:#fff;border-radius:10px;width:38px;height:38px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex:none;}
+  .page-head .back svg{width:18px;height:18px;}
+  .page-head .ph-title{font-size:16px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .page-head .ph-num{margin-left:auto;font-size:12px;color:#a9bceb;flex:none;}
+  .page-body{padding:22px 20px 30px;}
+  .page-body .lead{font-size:15.5px;margin-bottom:20px;}
+  .page-body .lead b{font-weight:700;}
+
+  .plain{background:#fdf6e3;border:1px solid #eeddb6;border-radius:14px;padding:14px 16px;margin:16px 0;font-size:14px;color:#6d5a2f;line-height:1.75;}
+  .plain .p-tag{display:inline-block;background:#e8c87a;color:#5c4508;font-size:11px;font-weight:700;border-radius:6px;padding:1px 8px;margin-bottom:6px;letter-spacing:.08em;}
+
+  .takeaway{background:var(--navy);color:#e8edf9;border-radius:16px;padding:18px 20px;margin:20px 0;display:flex;gap:14px;align-items:flex-start;}
+  .takeaway .t-tag{flex:none;background:#8fb0ff;color:#14204a;font-size:12px;font-weight:700;border-radius:8px;padding:2px 10px;height:24px;line-height:20px;margin-top:2px;white-space:nowrap;}
+  .takeaway p{font-size:15px;line-height:1.7;color:#dbe4f7;}
+  .takeaway p b{color:#fff;}
+
+  /* 企业卡 */
+  .firm{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:14px;}
+  .firm .f-top{display:flex;align-items:center;gap:8px;margin-bottom:10px;flex-wrap:wrap;}
+  .firm h4{font-size:16.5px;font-weight:700;}
+  .firm .f-tag{font-size:11px;font-weight:700;border-radius:6px;padding:1px 8px;}
+  .ft-green{background:#e3f3ea;color:#17603f;}
+  .ft-blue{background:#e3ebfb;color:#1f4fae;}
+  .ft-violet{background:#f3e9fb;color:#6b3fa0;}
+  .ft-amber{background:#fdeee2;color:#8a4c12;}
+  .f-num-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px;}
+  .f-num{flex:1;min-width:130px;border:1px solid var(--line);border-radius:12px;padding:11px;}
+  .f-num .n-k{font-size:11.5px;color:var(--gray2);margin-bottom:3px;}
+  .f-num .n-v{font-family:var(--serif);font-weight:900;font-size:20px;color:var(--blue);line-height:1.2;font-variant-numeric:tabular-nums;}
+  .f-num .n-v small{font-size:.5em;color:var(--gray2);font-weight:400;}
+  .firm p{font-size:13.5px;color:var(--gray);}
+  .firm .f-do{margin-top:10px;border-top:1px dashed var(--line);padding-top:10px;font-size:13px;color:var(--ink);}
+  .firm .f-do b{color:var(--green);}
+  .firm .f-src{font-size:11px;color:var(--gray2);margin-top:8px;}
+
+  /* 对标表 */
+  .cmp{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin-bottom:12px;}
+  .cmp h4{font-size:15.5px;font-weight:700;margin-bottom:8px;}
+  .cmp p{font-size:13.5px;color:var(--gray);}
+  .cmp .cmp-tag{display:inline-block;font-size:11px;font-weight:700;border-radius:6px;padding:1px 8px;margin-right:6px;}
+  .ct-best{background:#e3f3ea;color:#17603f;}
+  .ct-next{background:#e3ebfb;color:#1f4fae;}
+  .ct-watch{background:#fdeee2;color:#8a4c12;}
+
+  .page-nav{display:flex;gap:10px;padding:6px 20px 34px;}
+  .page-nav button{flex:1;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:12px;padding:12px;font-size:13.5px;font-weight:600;cursor:pointer;font-family:var(--sans);display:flex;align-items:center;justify-content:center;gap:6px;min-height:46px;}
+  .page-nav .pn-next{background:var(--navy);border-color:var(--navy);color:#fff;}
+
+  .src-list{display:flex;flex-direction:column;gap:8px;margin-top:6px;}
+  .src-list div{font-size:13px;color:var(--gray);display:flex;gap:8px;line-height:1.7;}
+  .src-list b{color:var(--violet);flex:none;font-weight:700;}
+  .disclaimer{margin-top:20px;border-top:1px solid var(--line);padding-top:14px;font-size:12px;color:var(--gray2);line-height:1.9;}
+
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*{transition:none!important;}}
+</style>
+</head>
+<body>
+<div class="app" id="app">
+
+  <!-- ================= 首页 ================= -->
+  <section class="view" id="view-home">
+    <div class="home-hero">
+      <div class="logo-row">
+        <svg class="berry" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13.5" r="8.5" fill="currentColor"/><path d="M12 4.2c1.6-2 3.4-2.9 5.4-2.7-.3 2.2-2.1 3.6-5.4 3.4-3.3.2-5.1-1.2-5.4-3.4 2-.2 3.8.7 5.4 2.7z" fill="currentColor"/></svg>
+        企业篇 · 公开资料
+      </div>
+      <h1>跟着"人"学，<br><span class="hl">别跟着"地方"学</span></h1>
+      <p class="sub">红河、永仁是"地方"，你要抄的是里面干成的"企业"。云南本地出口企业样板，按你的体量挑。</p>
+      <div class="verdict-strip">
+        <span class="v-tag">先看结论</span>
+        <p><b>最该抄的是蒙自翔悦</b>：2023 年才起步的小贸易公司，3 年打开 4 个国家，靠海关帮扶 + 展会 + 社媒。<b>另外，全球最大的浆果巨头维先农业，正在你家门口宜良建产业园。</b></p>
+      </div>
+    </div>
+    <div class="home-body">
+      <div class="section-label">五个模块，建议按顺序看</div>
+      <div class="mod-grid">
+        <a class="mod m1" href="#/m1">
+          <div class="m-top">
+            <span class="m-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+            <span class="m-arrow">›</span>
+          </div>
+          <h3>最像你的：蒙自翔悦</h3>
+          <p>2023 年起步的小公司，3 年打开 4 国</p>
+          <span class="m-badge">重点看</span>
+        </a>
+        <a class="mod m2" href="#/m2">
+          <div class="m-top">
+            <span class="m-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg></span>
+            <span class="m-arrow">›</span>
+          </div>
+          <h3>中型样板：安美、逮兰</h3>
+          <p>一家首拓马来西亚，一家走中老铁路</p>
+        </a>
+        <a class="mod m3" href="#/m3">
+          <div class="m-top">
+            <span class="m-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5L12 16l-4.9 2.6.9-5.5-4-3.9 5.5-.8z"/></svg></span>
+            <span class="m-arrow">›</span>
+          </div>
+          <h3>龙头玩法：爱莓庄</h3>
+          <p>6 年做到全球第一，能借鉴什么</p>
+        </a>
+        <a class="mod m4" href="#/m4">
+          <div class="m-top">
+            <span class="m-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V9M10 19V5M16 19v-8M22 19H2"/></svg></span>
+            <span class="m-arrow">›</span>
+          </div>
+          <h3>家门口的机会</h3>
+          <p>维先农业正在宜良建产业园</p>
+        </a>
+        <a class="mod m5" href="#/m5">
+          <div class="m-top">
+            <span class="m-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h6M9 12h6M9 18h4"/><path d="M4 4h16v16H4z"/></svg></span>
+            <span class="m-arrow">›</span>
+          </div>
+          <h3>给你的对标表</h3>
+          <p>你的体量，抄谁、学谁、蹭谁</p>
+        </a>
+      </div>
+      <div class="home-foot">
+        <span>全部内容来自海关总署、人民网、云南网等公开报道</span>
+        <a href="#/src">查看数据来源</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 模块 1：蒙自翔悦 ================= -->
+  <section class="view" id="view-m1">
+    <div class="page-head">
+      <button class="back" data-back aria-label="返回"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <span class="ph-title">最像你的：蒙自翔悦</span>
+      <span class="ph-num">模块 1 / 5</span>
+    </div>
+    <div class="page-body">
+      <p class="lead">这家公司<b>最值得你抄</b>：它和你一样，不是超级大厂，是 2023 年才下场做出口的"新兵"。</p>
+
+      <div class="firm">
+        <div class="f-top"><h4>蒙自翔悦进出口有限公司</h4><span class="f-tag ft-green">你的头号对标</span></div>
+        <div class="f-num-row">
+          <div class="f-num"><div class="n-k">起步时间</div><div class="n-v">2023<small> 年</small></div></div>
+          <div class="f-num"><div class="n-k">已打开市场</div><div class="n-v">4<small> 国</small></div></div>
+          <div class="f-num"><div class="n-k">国家名单</div><div class="n-v">印尼·新加坡·越南·吉尔吉斯</div></div>
+        </div>
+        <p>蒙自一家进出口公司，2023 年研判"蒙自蓝莓有出口需求、有产业优势"后下场。3 年时间，从零打开印尼、新加坡、越南、吉尔吉斯斯坦 4 个市场。</p>
+        <div class="f-do"><b>它是怎么干的（你直接抄）：</b>① 建"从种植到储运"的全链条质量管理体系（品质是敲门砖）；② 靠国际展会拉客户——去展会摆摊，让买家尝到果；③ 用社交媒体营销扩大知名度；④ 海关上门帮扶时积极接住——免费的政策宣讲、果园资质指导，全用上。</div>
+        <div class="f-src">来源：海关总署官网（2025-02）、中国（云南）国际贸易单一窗口（2025-03）</div>
+      </div>
+
+      <div class="plain">
+        <span class="p-tag">大白话</span>
+        翔悦的路线就是"<b>研判机会 → 办证 → 上展会 → 建口碑 → 滚客户</b>"。它 2023 年起步时，跟你今天一样是白纸一张——<b>你唯一比它晚的，是时间；但它证明了这条路 3 年能走通。</b>
+      </div>
+
+      <div class="takeaway">
+        <span class="t-tag">结论</span>
+        <p><b>翔悦 = 3 年前的你该成为的样子。</b>照着它的四步走：质量体系 + 展会 + 社媒 + 接住海关帮扶。</p>
+      </div>
+    </div>
+    <div class="page-nav">
+      <button data-goto="home">返回首页</button>
+      <button class="pn-next" data-goto="m2">下一个：中型样板</button>
+    </div>
+  </section>
+
+  <!-- ================= 模块 2：安美、逮兰 ================= -->
+  <section class="view" id="view-m2">
+    <div class="page-head">
+      <button class="back" data-back aria-label="返回"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <span class="ph-title">中型样板：安美、逮兰</span>
+      <span class="ph-num">模块 2 / 5</span>
+    </div>
+    <div class="page-body">
+      <p class="lead">再往上一层，两家"中量级"企业，<b>教你怎么从"第一单"变成"一年几百吨"</b>。</p>
+
+      <div class="firm">
+        <div class="f-top"><h4>红河安美农业科技</h4><span class="f-tag ft-blue">单点突破样板</span></div>
+        <div class="f-num-row">
+          <div class="f-num"><div class="n-k">首单时间</div><div class="n-v">2025 年 4 月</div></div>
+          <div class="f-num"><div class="n-k">首单去向</div><div class="n-v">马来西亚</div></div>
+          <div class="f-num"><div class="n-k">当年预计出口</div><div class="n-v">300<small> 吨</small></div></div>
+        </div>
+        <p>2025 年 4 月，安美把 9 吨蓝莓装进印着"红河蓝莓"标识的保鲜箱发往马来西亚，<b>4 天就出现在当地商超货架上</b>——这是它第一次开拓马来西亚市场，全年出口量预计 300 吨左右。</p>
+        <div class="f-do"><b>可借鉴：</b>① 借"区域公用品牌"背书（箱子上印"红河蓝莓"），小企业不用自己造品牌；② 选一个市场单点打透（先马来西亚），再复制到别的国家。</div>
+        <div class="f-src">来源：红河日报（2025-12-26）</div>
+      </div>
+
+      <div class="firm">
+        <div class="f-top"><h4>云南逮兰农业科技</h4><span class="f-tag ft-blue">物流样板</span></div>
+        <div class="f-num-row">
+          <div class="f-num"><div class="n-k">出口通道</div><div class="n-v">中老铁路</div></div>
+          <div class="f-num"><div class="n-k">去向</div><div class="n-v">老挝·泰国</div></div>
+          <div class="f-num"><div class="n-k">海关通道</div><div class="n-v">绿色通道</div></div>
+        </div>
+        <p>昆明企业逮兰农业，蓝莓走中老铁路"澜湄快线"国际列车出口老挝、泰国。果园采摘后机器分选、人工挑拣、保鲜盒装、冷库预冷，在海关监管下搭上火车，全程冷链直达东南亚。</p>
+        <div class="f-do"><b>可借鉴：</b>你离昆明近，<b>中老铁路就是现成的"陆路高速"</b>——运费比空运便宜得多，蓝莓走铁路 4 天内的时效完全够。这是你走量东南亚的路线模板。</div>
+        <div class="f-src">来源：中国新闻网（2026-07）、昆明市商务局（2026-06）</div>
+      </div>
+
+      <div class="takeaway">
+        <span class="t-tag">结论</span>
+        <p><b>安美教你"单点打透"，逮兰教你"铁路走量"。</b>两家的共同点：先试一小单（9 吨），跑顺了再放量（300 吨）。</p>
+      </div>
+    </div>
+    <div class="page-nav">
+      <button data-goto="m1">上一个</button>
+      <button class="pn-next" data-goto="m3">下一个：爱莓庄</button>
+    </div>
+  </section>
+
+  <!-- ================= 模块 3：爱莓庄 ================= -->
+  <section class="view" id="view-m3">
+    <div class="page-head">
+      <button class="back" data-back aria-label="返回"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <span class="ph-title">龙头玩法：爱莓庄</span>
+      <span class="ph-num">模块 3 / 5</span>
+    </div>
+    <div class="page-body">
+      <p class="lead">爱莓庄是云南出口的头号玩家，<b>体量你学不来，但它的"时间差"打法值得看懂</b>。</p>
+
+      <div class="firm">
+        <div class="f-top"><h4>爱莓庄（原"光筑农业"）</h4><span class="f-tag ft-violet">现象级龙头</span><span class="f-tag ft-amber">别照抄，看思路</span></div>
+        <div class="f-num-row">
+          <div class="f-num"><div class="n-k">进入蓝莓行业</div><div class="n-v">2020<small> 年</small></div></div>
+          <div class="f-num"><div class="n-k">2025-26 产季营收</div><div class="n-v">29<small> 亿</small></div></div>
+          <div class="f-num"><div class="n-k">出口市场</div><div class="n-v">日·阿联酋·东南亚</div></div>
+        </div>
+        <p>母公司是深圳上市公司诺普信（原本做农药）。2020 年才种下第一株蓝莓苗，<b>6 年做到全球最大单体基质蓝莓企业</b>：80 座基地、50 平方公里（超过澳门陆地面积）、15 万平方米冷链车间；供应山姆、沃尔玛、盒马、Ole' 等高端商超；欧睿国际认证其"全球蓝莓产量领先"；泰国正大集团授予它蓝莓专属供应商资格。</p>
+        <div class="f-do"><b>它的赚钱逻辑（这个你能用）：</b>① <b>"时间差"红利</b>——促早技术让果提前上市，错峰卖高价（对外号称"200 亩顶 600 亩"）；② <b>品牌进高端渠道</b>——山姆、盒马认品牌，出口价也高；③ <b>出口平抑行情</b>——2026 年国内蓝莓批发均价跌了 20%~30%，它靠出口（上半年出口收入 +74%）托底。国内卷，国外补，这就是它坚持出海的理由。</div>
+        <div class="f-src">来源：人民网（2025-10）、东方网（2026-09）、南方农村报（2026-09）、亚洲果蔬展官网（2026-05）</div>
+      </div>
+
+      <div class="plain">
+        <span class="p-tag">大白话</span>
+        爱莓庄的故事说明：<b>出海不是"锦上添花"，是"保命护城河"。</b>国内价跌 30% 的时候，它靠出口还能稳住利润。你也一样——国内卷成那样，海外这条路迟早要趟。
+      </div>
+
+      <div class="takeaway">
+        <span class="t-tag">结论</span>
+        <p><b>学爱莓庄的"错峰 + 品牌 + 出口托底"思路，不学它的规模。</b>你 53 亩做不了全产业链，但可以学它"早上市卖高价、出口补国内"的打法。</p>
+      </div>
+    </div>
+    <div class="page-nav">
+      <button data-goto="m2">上一个</button>
+      <button class="pn-next" data-goto="m4">下一个：家门口的机会</button>
+    </div>
+  </section>
+
+  <!-- ================= 模块 4：维先农业 ================= -->
+  <section class="view" id="view-m4">
+    <div class="page-head">
+      <button class="back" data-back aria-label="返回"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <span class="ph-title">家门口的机会</span>
+      <span class="ph-num">模块 4 / 5</span>
+    </div>
+    <div class="page-body">
+      <p class="lead">这条信息<b>对你最有用</b>：全球最大的高端浆果营运商，正在你家门口——宜良——建产业园。</p>
+
+      <div class="firm">
+        <div class="f-top"><h4>维先农业（美国维先农业集团）</h4><span class="f-tag ft-amber">就在宜良</span></div>
+        <div class="f-num-row">
+          <div class="f-num"><div class="n-k">身份</div><div class="n-v">全球最大高端鲜食小浆果种植营运商</div></div>
+          <div class="f-num"><div class="n-k">在宜良</div><div class="n-v">蓝莓产业园在建</div></div>
+          <div class="f-num"><div class="n-k">在云南其他布局</div><div class="n-v">大理·易门·安宁</div></div>
+        </div>
+        <p>2024 年 2 月，维先农业进入中国：首个农场建在大理弥渡（无土栽培，2026 年 4 月首次出口新加坡 8.28 吨）；易门投资 1.1 亿建 3000 亩园区；安宁投 900 万美元建千亩农场。宜良这边：<b>2026 年 5 月县里为它的蓝莓产业园项目专门开了推进会，县委书记出席</b>，县政府工作报告也点名"加快维先蓝莓三产融合项目"。</p>
+        <div class="f-do"><b>对你的三个意义：</b>① <b>合作机会</b>——巨头建产业园需要本地果源、包装、冷链配套，你 53 亩 + 收果模式正好可以谈供货/代收合作；② <b>学习样板</b>——它带来全球顶级的分选、品控、冷链标准，跟着学等于免费上课；③ <b>产业信号</b>——全球巨头都来宜良种蓝莓了，说明这块地的果有国际竞争力，你出海方向没错。</div>
+        <div class="f-src">来源：宜良县政府（2026-02、2026-05）、昆明市政府（2026-06）、一带一路网（2025-05）</div>
+      </div>
+
+      <div class="plain">
+        <span class="p-tag">大白话</span>
+        一个全球巨头在你县里建基地，<b>这比任何展会都重要</b>。你有果、有收果能力，它有技术和海外渠道——<b>先想办法蹭上这班车</b>，比自己从 0 闯省事得多。
+      </div>
+
+      <div class="takeaway">
+        <span class="t-tag">结论</span>
+        <p><b>你的"借船"名单里，第一位就写维先农业。</b>去县农业农村局打听它的产业园进度，看有没有供货、代收、用工层面的合作窗口。</p>
+      </div>
+    </div>
+    <div class="page-nav">
+      <button data-goto="m3">上一个</button>
+      <button class="pn-next" data-goto="m5">下一个：给你的对标表</button>
+    </div>
+  </section>
+
+  <!-- ================= 模块 5：对标表 ================= -->
+  <section class="view" id="view-m5">
+    <div class="page-head">
+      <button class="back" data-back aria-label="返回"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <span class="ph-title">给你的对标表</span>
+      <span class="ph-num">模块 5 / 5</span>
+    </div>
+    <div class="page-body">
+      <p class="lead">别贪多。<b>你的体量（53 亩 + 收果 + 50 万 + 0 资质），只抄四家，分工明确。</b></p>
+
+      <div class="cmp">
+        <h4><span class="cmp-tag ct-best">头号对标 · 抄它</span>蒙自翔悦（2023 起步 → 4 国）</h4>
+        <p>抄它怎么从 0 起步：全链条质量体系 + 国际展会 + 社媒 + 接住海关帮扶。你们起点几乎一样，它的每一步你都能照着做。</p>
+      </div>
+      <div class="cmp">
+        <h4><span class="cmp-tag ct-next">二级对标 · 学它</span>红河安美（首单 9 吨 → 年 300 吨）</h4>
+        <p>学它怎么放量：选一个市场单点打透（先马来西亚），借区域公用品牌背书，第一单小、跑顺了再加。</p>
+      </div>
+      <div class="cmp">
+        <h4><span class="cmp-tag ct-next">通道样板 · 用它</span>逮兰农业（中老铁路 → 老挝泰国）</h4>
+        <p>用它的物流思路：你离昆明近，中老铁路就是你走量东南亚的"陆路高速"，运费省一大截。</p>
+      </div>
+      <div class="cmp">
+        <h4><span class="cmp-tag ct-watch">机会对象 · 蹭它</span>维先农业（全球巨头，宜良在建园）</h4>
+        <p>蹭它的落地红利：去谈供货、代收、配套合作，跟着它学全球级品控标准——这是你身边最大的"免费老师"。</p>
+      </div>
+      <div class="cmp">
+        <h4><span class="cmp-tag ct-watch">思路参考 · 看它</span>爱莓庄（6 年全球第一）</h4>
+        <p>看它理解大逻辑：错峰上市卖高价、品牌进高端渠道、出口托底国内行情——不学规模，学思路。</p>
+      </div>
+
+      <div class="plain">
+        <span class="p-tag">大白话</span>
+        一句话记牢：<b>抄翔悦（怎么起步）、学安美（怎么放量）、用铁路（怎么省运费）、蹭维先（怎么借船）、看爱莓庄（怎么想大格局）。</b>
+      </div>
+
+      <div class="takeaway">
+        <span class="t-tag">结论</span>
+        <p><b>本周就把"蹭维先"和"抄翔悦"变成动作：</b>去县里问维先产业园进度，去海关问出口登记——两件事都不花钱，都是免费的起步。</p>
+      </div>
+    </div>
+    <div class="page-nav">
+      <button data-goto="m4">上一个</button>
+      <button class="pn-next" data-goto="home">看完了，回首页</button>
+    </div>
+  </section>
+
+  <!-- ================= 数据来源 ================= -->
+  <section class="view" id="view-src">
+    <div class="page-head">
+      <button class="back" data-back aria-label="返回"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <span class="ph-title">数据来源</span>
+    </div>
+    <div class="page-body">
+      <p class="lead">本页全部内容来自<b>公开报道</b>（政府官网、央媒、行业媒体），检索时间：2026 年 10 月。</p>
+      <div class="src-list">
+        <div><b>01</b><span>海关总署官网（2025-02-21）——蒙自翔悦：海关上门帮扶、果园资质、包装企业注册</span></div>
+        <div><b>02</b><span>中国（云南）国际贸易单一窗口（2025-03-03）——蒙自翔悦 2023 年起、印尼/新加坡/越南/吉尔吉斯斯坦、展会+社媒拓客</span></div>
+        <div><b>03</b><span>红河日报（2025-12-26）——红河安美 9 吨发马来西亚 4 天上架、全年预计 300 吨</span></div>
+        <div><b>04</b><span>中国新闻网（2026-07-06）、昆明市商务局（2026-06-25）——逮兰农业中老铁路"澜湄快线"出口老挝泰国</span></div>
+        <div><b>05</b><span>人民网（2025-10-13）——爱莓庄（原光筑农业）进入云南 5 年、出口十余国、发展模式剖析</span></div>
+        <div><b>06</b><span>东方网（2026-09-03）、南方+（2026-09-04）——爱莓庄 29 亿营收、80 座基地、50 平方公里、15 万㎡冷链</span></div>
+        <div><b>07</b><span>南方农村报（2026-09-10、2026-05-14）——诺普信蓝莓半年报：出口收入 +74.12%、新增中亚土耳其迪拜；国内批发均价跌 20%-30%</span></div>
+        <div><b>08</b><span>亚洲果蔬展官网（2026-05-20）——爱莓庄成为 2026 亚洲国际果蔬展官方鲜果合作伙伴、正大集团合作</span></div>
+        <div><b>09</b><span>宜良县政府（2026-02-09 政府工作报告、2026-05-21 推进会）——维先蓝莓产业园、三产融合项目</span></div>
+        <div><b>10</b><span>昆明市政府（2026-06-09）——维先农业"全球领先的浆果全产业链一体化种植营运商"落地宜良</span></div>
+        <div><b>11</b><span>一带一路网（2025-05-16）、人民网云南（2025-02-05）——维先大理农场、美国维先农业集团首个中国农场</span></div>
+        <div><b>12</b><span>云南省农业农村厅（2026-04-01）——维先农业（弥渡）500 亩、首次出口新加坡 8.28 吨</span></div>
+        <div><b>13</b><span>红河州政府（2025-12-23）——红河集结的龙头企业名单（卓莓、科思达、佳沃、光筑等）</span></div>
+      </div>
+      <div class="disclaimer">
+        企业案例均依据公开报道归纳，未添加未经证实的细节；企业规模、营收、出口数据为报道原文口径，具体以企业披露和海关统计为准。本页只做"可以借鉴谁"的参考，不构成对任何企业的投资或合作建议。
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+/* ===== 简易路由：hash 切视图 ===== */
+var VIEWS = ['home','m1','m2','m3','m4','m5','src'];
+function currentView(){
+  var h = location.hash.replace(/^#\//,'');
+  return VIEWS.indexOf(h) >= 0 ? h : 'home';
+}
+function render(){
+  var v = currentView();
+  VIEWS.forEach(function(id){
+    var el = document.getElementById('view-' + id);
+    if(el){ el.classList.toggle('active', id === v); }
+  });
+  window.scrollTo(0,0);
+}
+window.addEventListener('hashchange', render);
+render();
+
+document.addEventListener('click', function(e){
+  var back = e.target.closest('[data-back]');
+  if(back){
+    e.preventDefault();
+    location.hash = '#/home';
+    return;
+  }
+  var goto = e.target.closest('[data-goto]');
+  if(goto){
+    e.preventDefault();
+    location.hash = '#/' + goto.getAttribute('data-goto');
+    return;
+  }
+});
+</script>
+</body>
+</html>
