@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>云南蓝莓出海，划不划算？——果园老板一看就懂的生意手册</title>
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Serif+SC:wght@700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap">
+<style>
+  :root{
+    --ink:#1c2333;
+    --navy:#1e2b4f;
+    --blue:#2e5ac2;
+    --violet:#7a5bc7;
+    --cream:#faf7f0;
+    --card:#ffffff;
+    --line:#e7e0d3;
+    --gray:#6a6f7c;
+    --gray2:#9a9fae;
+    --green:#1e7b52;
+    --amber:#b96a1e;
+    --serif:"Noto Serif SC",Georgia,"Songti SC",serif;
+    --sans:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--sans);color:var(--ink);background:var(--cream);
+    font-size:16px;line-height:1.8;
+    -webkit-font-smoothing:antialiased;
+  }
+  .app{max-width:760px;margin:0 auto;min-height:100vh;background:var(--cream);}
+
+  /* ===== 视图切换 ===== */
+  .view{display:none;}
+  .view.active{display:block;}
+
+  /* ===== 首页 Hero ===== */
+  .home-hero{
+    background:var(--navy);color:#fff;padding:52px 24px 30px;border-radius:0 0 26px 26px;
+    position:relative;overflow:hidden;
+  }
+  .home-hero::after{
+    content:"";position:absolute;right:-70px;top:-70px;width:220px;height:220px;border-radius:50%;
+    background:radial-gradient(circle at 40% 40%, rgba(143,176,255,.28), transparent 70%);
+  }
+  .logo-row{display:flex;align-items:center;gap:9px;font-size:13px;letter-spacing:.14em;color:#a9bceb;margin-bottom:18px;}
+  .berry{width:18px;height:18px;flex:none;}
+  .berry circle{fill:currentColor;}
+  .home-hero h1{
+    font-family:var(--serif);font-weight:900;font-size:clamp(28px,7vw,40px);line-height:1.3;
+    letter-spacing:.01em;position:relative;z-index:1;
+  }
+  .home-hero h1 .hl{color:#8fb0ff;}
+  .home-hero .sub{margin-top:12px;font-size:15px;color:#c6d2ef;font-weight:400;position:relative;z-index:1;}
+  .verdict-strip{
+    margin:18px 20px 0;background:#2a3a68;border:1px solid rgba(255,255,255,.14);border-radius:14px;
+    padding:14px 16px;display:flex;gap:12px;align-items:flex-start;position:relative;z-index:1;
+  }
+  .verdict-strip .v-tag{
+    flex:none;background:#8fb0ff;color:#14204a;font-size:12px;font-weight:700;border-radius:8px;
+    padding:2px 10px;height:24px;line-height:20px;margin-top:3px;
+  }
+  .verdict-strip p{font-size:14.5px;color:#e6ecfa;line-height:1.65;}
+  .verdict-strip p b{color:#fff;}
+
+  /* ===== 首页模块网格 ===== */
+  .home-body{padding:22px 18px 40px;}
+  .section-label{font-size:13px;color:var(--gray2);letter-spacing:.1em;margin:6px 4px 12px;}
+  .mod-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  @media (max-width:460px){ .mod-grid{grid-template-columns:1fr;} }
+  .mod{
+    display:block;background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:18px 16px;text-decoration:none;color:inherit;position:relative;
+    transition:transform .12s ease, box-shadow .12s ease;
+  }
+  .mod:active{transform:scale(.98);}
+  .mod .m-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+  .mod .m-ico{
+    width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;
+  }
+  .mod .m-ico svg{width:22px;height:22px;}
+  .mod .m-arrow{color:#c9c2b2;font-size:18px;line-height:1;}
+  .mod h3{font-size:17px;font-weight:700;margin-bottom:6px;letter-spacing:.01em;}
+  .mod p{font-size:13px;color:var(--gray);line-height:1.6;}
+  .mod .m-badge{
+    display:inline-block;margin-top:10px;font-size:11px;color:#8a6a2f;background:#f7ecd6;
+    border-radius:20px;padding:1px 10px;font-weight:500;
+  }
+  .m1 .m-ico{background:var(--navy);}
+  .m2 .m-ico{background:var(--blue);}
+  .m3 .m-ico{background:var(--green);}
+  .m4 .m-ico{background:var(--amber);}
+  .m5 .m-ico{background:var(--violet);}
+  .m6 .m-ico{background:#c2574a;}
+  .home-foot{
+    margin-top:26px;text-align:center;font-size:12px;color:var(--gray2);
+    display:flex;flex-direction:column;gap:4px;
+  }
+  .home-foot a{color:var(--blue);text-decoration:none;font-weight:500;}
+  .home-foot a:hover{text-decoration:underline;}
+
+  /* ===== 子页面 ===== */
+  .page-head{
+    position:sticky;top:0;z-index:50;background:var(--navy);color:#fff;
+    display:flex;align-items:center;gap:10px;padding:12px 16px;
+  }
+  .page-head .back{
+    background:rgba(255,255,255,.12);border:none;color:#fff;border-radius:10px;
+    width:38px;height:38px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex:none;
+  }
+  .page-head .back svg{width:18px;height:18px;}
+  .page-head .ph-title{font-size:16px;font-weight:700;letter-spacing:.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .page-head .ph-num{margin-left:auto;font-size:12px;color:#a9bceb;flex:none;}
+
+  .page-body{padding:22px 20px 30px;}
+  .page-body .lead{font-size:15.5px;color:var(--ink);margin-bottom:20px;}
+  .page-body .lead b{font-weight:700;}
+
+  /* 白话框 */
+  .plain{
+    background:#fdf6e3;border:1px solid #eeddb6;border-radius:14px;padding:14px 16px;margin:16px 0;
+    font-size:14px;color:#6d5a2f;line-height:1.75;
+  }
+  .plain .p-tag{
+    display:inline-block;background:#e8c87a;color:#5c4508;font-size:11px;font-weight:700;
+    border-radius:6px;padding:1px 8px;margin-bottom:6px;letter-spacing:.08em;
+  }
+
+  /* 结论条 */
+  .takeaway{
+    background:var(--navy);color:#e8edf9;border-radius:16px;padding:18px 20px;margin:20px 0;
+    display:flex;gap:14px;align-items:flex-start;
+  }
+  .takeaway .t-tag{
+    flex:none;background:#8fb0ff;color:#14204a;font-size:12px;font-weight:700;border-radius:8px;
+    padding:2px 10px;height:24px;line-height:20px;margin-top:2px;white-space:nowrap;
+  }
+  .takeaway p{font-size:15px;line-height:1.7;color:#dbe4f7;}
+  .takeaway p b{color:#fff;}
+
+  /* 提醒框（橙色） */
+  .warn{
+    background:#fdeee2;border:1px solid #f2cdaa;border-radius:14px;padding:14px 16px;margin:16px 0;
+    font-size:14px;color:#8a4c12;line-height:1.75;
+  }
+  .warn .w-tag{
+    display:inline-block;background:#e8a06a;color:#5c2c06;font-size:11px;font-weight:700;
+    border-radius:6px;padding:1px 8px;margin-bottom:6px;letter-spacing:.08em;
+  }
+
+  /* 好消息卡片 */
+  .good{
+    background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:14px;
+  }
+  .good .g-num{
+    display:flex;align-items:baseline;gap:6px;font-family:var(--serif);font-weight:900;
+    font-size:clamp(24px,6vw,32px);color:var(--blue);line-height:1.2;font-variant-numeric:tabular-nums;
+  }
+  .good .g-num small{font-size:.45em;color:var(--gray2);font-weight:400;}
+  .good h4{font-size:16px;font-weight:700;margin:8px 0 6px;}
+  .good p{font-size:14px;color:var(--gray);}
+  .good .g-src{font-size:11px;color:var(--gray2);margin-top:8px;}
+
+  /* 市场卡片 */
+  .market{
+    background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin-bottom:12px;
+  }
+  .market .mk-top{display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap;}
+  .market h4{font-size:16px;font-weight:700;}
+  .market .mk-tag{font-size:11px;font-weight:600;border-radius:20px;padding:1px 10px;}
+  .tag-easy{background:#e3f3ea;color:#17603f;}
+  .tag-mid{background:#fdeee2;color:#8a4c12;}
+  .tag-hard{background:#f3e9fb;color:#6b3fa0;}
+  .market p{font-size:13.5px;color:var(--gray);}
+  .market .mk-row{display:flex;gap:8px;font-size:12.5px;color:var(--gray);margin-top:8px;}
+  .market .mk-row b{color:var(--ink);font-weight:600;flex:none;}
+
+  /* 算账 */
+  .money-card{
+    background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:14px;
+  }
+  .money-card h4{font-size:15px;font-weight:700;margin-bottom:12px;}
+  .money-card .mc-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  @media (max-width:460px){ .money-card .mc-grid{grid-template-columns:1fr;} }
+  .mc-item{
+    border:1px solid var(--line);border-radius:12px;padding:12px 14px;
+  }
+  .mc-item .mc-k{font-size:12px;color:var(--gray2);margin-bottom:4px;}
+  .mc-item .mc-v{font-family:var(--serif);font-weight:900;font-size:22px;color:var(--ink);line-height:1.2;font-variant-numeric:tabular-nums;}
+  .mc-item .mc-v small{font-size:.5em;color:var(--gray2);font-weight:400;}
+  .mc-item .mc-d{font-size:12px;color:var(--gray);margin-top:4px;line-height:1.5;}
+  .mc-item.mc-sell .mc-v{color:var(--blue);}
+  .mc-item.mc-cost .mc-v{color:var(--amber);}
+  .mc-item.mc-profit .mc-v{color:var(--green);}
+  .mc-item.mc-profit{background:#eef7f2;border-color:#cfe6da;}
+
+  /* 卖价 vs 成本 横条 */
+  .bar-block{margin:14px 0 6px;}
+  .bar-row{margin-bottom:10px;}
+  .bar-row .bar-lab{display:flex;justify-content:space-between;font-size:13px;color:var(--ink);margin-bottom:4px;}
+  .bar-row .bar-lab b{font-weight:700;}
+  .bar-row .bar-lab span{color:var(--gray2);font-size:12px;}
+  .bar-track{height:22px;border-radius:6px;background:#efe9dd;position:relative;overflow:hidden;}
+  .bar-fill{height:100%;border-radius:6px;}
+  .bar-profit{height:100%;border-radius:6px;background:repeating-linear-gradient(45deg,#37a06f,#37a06f 8px,#2d8a5f 8px,#2d8a5f 16px);}
+  .bar-legend{display:flex;gap:16px;font-size:12px;color:var(--gray);margin-top:8px;}
+  .bar-legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:5px;vertical-align:-1px;}
+
+  /* 成本清单 */
+  .cost-item{display:flex;gap:12px;margin-bottom:12px;align-items:flex-start;}
+  .cost-item .c-ic{
+    flex:none;width:34px;height:34px;border-radius:10px;background:#f0e9da;color:#8a6a2f;
+    display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;margin-top:2px;
+  }
+  .cost-item .c-body h4{font-size:15px;font-weight:700;}
+  .cost-item .c-body p{font-size:13.5px;color:var(--gray);margin-top:2px;}
+  .cost-item .c-body .c-v{font-family:var(--serif);font-weight:900;color:var(--amber);font-size:18px;margin-top:4px;}
+  .cost-item .c-body .c-v small{font-size:.55em;color:var(--gray2);font-weight:400;}
+
+  /* 案例故事 */
+  .story{
+    background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:14px;
+  }
+  .story .st-k{font-size:11px;letter-spacing:.14em;color:var(--violet);font-weight:700;margin-bottom:4px;}
+  .story h4{font-size:16px;font-weight:700;margin-bottom:6px;}
+  .story .st-v{font-family:var(--serif);font-weight:900;font-size:19px;color:var(--blue);line-height:1.45;margin-bottom:6px;}
+  .story .st-v small{font-size:.6em;color:var(--gray2);font-weight:400;}
+  .story p{font-size:13.5px;color:var(--gray);}
+  .story .st-src{font-size:11px;color:var(--gray2);margin-top:8px;}
+
+  /* 步骤 */
+  .step2{display:flex;gap:14px;margin-bottom:16px;align-items:flex-start;}
+  .step2 .s-ic{
+    flex:none;width:40px;height:40px;border-radius:50%;background:var(--navy);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:700;font-size:17px;
+  }
+  .step2 .s-body h4{font-size:15.5px;font-weight:700;margin-bottom:4px;}
+  .step2 .s-body p{font-size:13.5px;color:var(--gray);}
+  .step2 .s-body .s-src{font-size:11px;color:var(--gray2);margin-top:4px;}
+
+  /* 时间表 */
+  .timeline{display:flex;flex-direction:column;gap:0;margin-top:6px;}
+  .tl-row{display:flex;gap:12px;position:relative;padding-bottom:14px;}
+  .tl-row::before{content:"";position:absolute;left:13px;top:28px;bottom:0;width:2px;background:var(--line);}
+  .tl-row:last-child::before{display:none;}
+  .tl-dot{flex:none;width:28px;height:28px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;position:relative;z-index:1;}
+  .tl-body h4{font-size:14.5px;font-weight:700;margin:3px 0 2px;}
+  .tl-body p{font-size:13px;color:var(--gray);}
+
+  /* 底部翻页 */
+  .page-nav{
+    display:flex;gap:10px;padding:6px 20px 34px;
+  }
+  .page-nav button{
+    flex:1;border:1px solid var(--line);background:var(--card);color:var(--ink);
+    border-radius:12px;padding:12px;font-size:13.5px;font-weight:600;cursor:pointer;font-family:var(--sans);
+    display:flex;align-items:center;justify-content:center;gap:6px;min-height:46px;
+  }
+  .page-nav .pn-next{background:var(--navy);border-color:var(--navy);color:#fff;}
+
+  /* 来源页 */
+  .src-list{display:flex;flex-direction:column;gap:8px;margin-top:6px;}
+  .src-list div{font-size:13px;color:var(--gray);display:flex;gap:8px;line-height:1.7;}
+  .src-list b{color:var(--violet);flex:none;font-weight:700;}
+  .disclaimer{
+    margin-top:20px;border-top:1px solid var(--line);padding-top:14px;font-size:12px;color:var(--gray2);line-height:1.9;
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    *{transition:none!important;}
+  }
+</style>
+</head>
+<body>
+<div class="app" id="app">
+
+  <!-- ================= 首页 ================= -->
+  <section class="view" id="view-home">
+    <div class="home-hero">
+      <div class="logo-row">
+        <svg class="berry" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13.5" r="8.5" fill="currentColor"/><path d="M12 4.2c1.6-2 3.4-2.9 5.4-2.7-.3 2.2-2.1 3.6-5.4 3.4-3.3.2-5.1-1.2-5.4-3.4 2-.2 3.8.7 5.4 2.7z" fill="currentColor"/></svg>
+        给果园老板的出海生意手册
+      </div>
+      <h1>云南蓝莓出海，<br><span class="hl">划不划算？</span></h1>
+      <p class="sub">不绕弯子，不堆术语。分几个模块，每个点进去都能看懂。</p>
+      <div class="verdict-strip">
+        <span class="v-tag">先看结论</span>
+        <p><b>值得试，但别急着猛干。</b>先办证、先试一小单，跑通了再放量——这两三年正是窗口期。</p>
+      </div>
+    </div>
+    <div class="home-body">
+      <div class="section-label">六个模块，建议按顺序看</div>
+      <div class="mod-grid">
+        <a class="mod m1" href="#/m1">
+          <div class="m-top">
+            <span class="m-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M8 4.5 10 6M16 4.5 14 6M4 10h3M4.5 15l1.8-1.2M19.5 15 17.7 13.8M20 10h-3"/><circle cx="12" cy="14" r="7"/><path d="M9 14h6"/></svg></span>
+            <span class="m-arrow">›</span>
+          </div>
+          <h3>这生意能做吗</h3>
+          <p>海外缺不缺、能不能赚，三分钟看懂</p>
+          <span class="m-badge">先看这个</span>
+        </a>
+        <a class="mod m2" href="#/m2">
+          <div class="m-top">
+            <span class="m-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3z"/></svg></span>
+            <span class="m-arrow">›</span>
+          </div>
+          <h3>卖到哪里去</h3>
+          <p>家门口、东南亚、中东、俄罗斯，哪个适合你</p>
+        </a>
+        <a class="mod m3" href="#/m3">
+          <div class="m-top">
+            <span class="m-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a4 4 0 0 1 8 0v2M12 12v4M10 13h4"/></svg></span>
+            <span class="m-arrow">›</span>
+          </div>
+          <h3>一柜能赚多少</h3>
+          <p>一斤挣几块、一柜挣几万，帮你算明白</p>
+        </a>
+        <a class="mod m4" href="#/m4">
+          <div class="m-top">
+            <span class="m-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.5c0-1 1-1.7 2.5-1.7s2.5.7 2.5 1.7-1 1.6-2.5 1.8c-1.5.2-2.5.8-2.5 1.8s1 1.7 2.5 1.7 2.5-.7 2.5-1.7"/></svg></span>
+            <span class="m-arrow">›</span>
+          </div>
+          <h3>钱都花在哪</h3>
+          <p>运费、包装、杂费，四笔开销别漏算</p>
+        </a>
+        <a class="mod m5" href="#/m5">
+          <div class="m-top">
+            <span class="m-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5L12 16l-4.9 2.6.9-5.5-4-3.9 5.5-.8z"/></svg></span>
+            <span class="m-arrow">›</span>
+          </div>
+          <h3>别人怎么做成的</h3>
+          <p>云南老乡的真实例子，照着抄作业</p>
+        </a>
+        <a class="mod m6" href="#/m6">
+          <div class="m-top">
+            <span class="m-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/><circle cx="18" cy="17" r="3.2"/><path d="M18 15.4v1.6l1.2.9"/></svg></span>
+            <span class="m-arrow">›</span>
+          </div>
+          <h3>第一步干什么</h3>
+          <p>办证、找买家、试小单，照着做就行</p>
+          <span class="m-badge">看完前 5 个再看</span>
+        </a>
+      </div>
+      <div class="home-foot">
+        <span>这份手册里的每个数字都有出处，都能查</span>
+        <a href="#/src">查看数据来源</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 模块 1：这生意能做吗 ================= -->
+  <section class="view" id="view-m1">
+    <div class="page-head">
+      <button class="back" data-back aria-label="返回"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <span class="ph-title">这生意能做吗</span>
+      <span class="ph-num">模块 1 / 6</span>
+    </div>
+    <div class="page-body">
+      <p class="lead">一句话：<b>海外确实缺蓝莓，咱们的果已经卖出去了，而且卖价比国内好。</b>下面三个好消息，你看完就明白了。</p>
+
+      <div class="good">
+        <div class="g-num">320<small>亿美元 / 年</small></div>
+        <h4>全世界都爱吃，市场还在涨</h4>
+        <p>全世界一年蓝莓的买卖，大约 2300 亿人民币（320 亿美元），每年还涨 7%~8%。蓝莓在国外是普通家庭常吃的水果，不是稀罕货，量走得起。</p>
+        <div class="g-src">来源：中国经济网 / 云南日报（引中研普华），2025-2026</div>
+      </div>
+      <div class="good">
+        <div class="g-num">7,098<small>吨 / 2025 年</small></div>
+        <h4>咱们的果，已经卖出去了</h4>
+        <p>2025 年中国蓝莓出口 7000 多吨，是 2023 年的 7 倍。其中云南的果占全国出口一半以上——老外已经在买云南蓝莓了，这条路是通的。</p>
+        <div class="g-src">来源：海关数据（Agronometrics，2026-04）；新华网（2025-07）</div>
+      </div>
+      <div class="good">
+        <div class="g-num">约 25<small>元 / 斤</small></div>
+        <h4>卖价比国内好</h4>
+        <p>2025 年出口平均价约 25 元/斤；国内产地批发大概 20 元/斤上下。卖到国外，每斤能多卖几块钱，这就是出海的差价。</p>
+        <div class="g-src">来源：出口均价按海关口径 $7.16/kg 折算；国内价为红河"亩收入 8 万 / 亩产 2000 公斤"推算</div>
+      </div>
+
+      <div class="plain">
+        <span class="p-tag">大白话</span>
+        为啥国内难卖？<b>种的人太多了，价格被卷低。</b>那为啥国外能卖上价？因为国外刚开始接受中国蓝莓，而且云南离东南亚近、果更新鲜，人家愿意多出钱。等以后大家都往外卖，这个差价也会变小——所以要趁现在。
+      </div>
+
+      <div class="takeaway">
+        <span class="t-tag">结论</span>
+        <p><b>能做，窗口期就是这两三年。</b>趁别人还没都往外卖，先把通道跑通。</p>
+      </div>
+    </div>
+    <div class="page-nav">
+      <button data-goto="home">返回首页</button>
+      <button class="pn-next" data-goto="m2">下一个：卖到哪里去</button>
+    </div>
+  </section>
+
+  <!-- ================= 模块 2：卖到哪里去 ================= -->
+  <section class="view" id="view-m2">
+    <div class="page-head">
+      <button class="back" data-back aria-label="返回"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <span class="ph-title">卖到哪里去</span>
+      <span class="ph-num">模块 2 / 6</span>
+    </div>
+    <div class="page-body">
+      <p class="lead">像开店选址一样：<b>先近后远，先易后难。</b>四个方向，哪个适合你，看下面这几张"选址卡"。</p>
+
+      <div class="market">
+        <div class="mk-top"><h4>香港 —— 家门口</h4><span class="mk-tag tag-easy">最好上手</span></div>
+        <p>离得最近，当天或隔天就到，2025 年买中国蓝莓最多的就是香港。适合第一单练手：跑流程、看损耗、回笼资金。</p>
+        <div class="mk-row"><b>怎么运</b><span>陆运/空运都行，1~3 天</span></div>
+      </div>
+      <div class="market">
+        <div class="mk-top"><h4>东南亚（新加坡 / 马来西亚 / 泰国 / 印尼）</h4><span class="mk-tag tag-easy">增长最快</span></div>
+        <p>华人超市多、爱吃水果、离云南近（陆路几天就到）。现在是中国蓝莓出口涨得最快的方向。新加坡超市里蓝莓一盒卖 21 块人民币（约 85 元/斤），差价空间大。</p>
+        <div class="mk-row"><b>怎么运</b><span>陆路+海运，3~5 天；运费便宜</span></div>
+        <div class="mk-row"><b>备注</b><span>中国蓝莓在新加坡卖得比澳、日货便宜 30%~50%，口碑已经打开</span></div>
+      </div>
+      <div class="market">
+        <div class="mk-top"><h4>中东（迪拜等）—— 有钱的市场</h4><span class="mk-tag tag-mid">卖得贵，运费也贵</span></div>
+        <p>那边水果贵、竞争少：红河蓝莓在迪拜高端超市卖到 120 元一盒还供不应求。但离得远，只能空运（贵），适合少量、卖高价、打品牌。</p>
+        <div class="mk-row"><b>怎么运</b><span>空运为主，运费是一斤 12~17 块</span></div>
+      </div>
+      <div class="market">
+        <div class="mk-top"><h4>俄罗斯 —— 缺货的市场</h4><span class="mk-tag tag-mid">利润高，波动也大</span></div>
+        <p>欧洲水果不卖给俄罗斯了，中国水果补上。2026 年从中国口岸过去的蓝莓比去年涨了 20 倍。走陆路口岸，还能用人民币结算。</p>
+        <div class="mk-row"><b>怎么运</b><span>陆路口岸（满洲里等），约 10 天；空运 6 天</span></div>
+        <div class="mk-row"><b>备注</b><span>有人高峰期一柜挣几十万，但现在利润降下来了——别只盯着它</span></div>
+      </div>
+
+      <div class="plain">
+        <span class="p-tag">大白话</span>
+        <b>"先近后远"是啥意思？</b>就像开店：先把家门口的店开稳（香港、新加坡），再开分店（马来西亚、泰国、俄罗斯），最后进高端商场（迪拜）。一步到位容易摔跟头。
+      </div>
+
+      <div class="takeaway">
+        <span class="t-tag">结论</span>
+        <p><b>第一年主打香港 + 新加坡/马来西亚</b>（近、快、有现成买家）；第二年再试中东和俄罗斯（远、贵、利润高）。</p>
+      </div>
+    </div>
+    <div class="page-nav">
+      <button data-goto="m1">上一个</button>
+      <button class="pn-next" data-goto="m3">下一个：一柜能赚多少</button>
+    </div>
+  </section>
+
+  <!-- ================= 模块 3：一柜能赚多少 ================= -->
+  <section class="view" id="view-m3">
+    <div class="page-head">
+      <button class="back" data-back aria-label="返回"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <span class="ph-title">一柜能赚多少</span>
+      <span class="ph-num">模块 3 / 6</span>
+    </div>
+    <div class="page-body">
+      <p class="lead">老板最关心的问题来了。<b>先把"一柜"说清楚：就是一个冷藏大货柜，能装 2.7 万斤左右蓝莓（约 13 吨多）。</b>然后看这单账：</p>
+
+      <div class="money-card">
+        <h4>一柜果，账怎么算（按一斤算）</h4>
+        <div class="mc-grid">
+          <div class="mc-item mc-sell">
+            <div class="mc-k">卖出去的价格</div>
+            <div class="mc-v">22~25<small> 元 / 斤</small></div>
+            <div class="mc-d">出口卖价（按 2025 年出口均价和保守价取的范围）</div>
+          </div>
+          <div class="mc-item mc-cost">
+            <div class="mc-k">花掉的成本</div>
+            <div class="mc-v">约 18~19<small> 元 / 斤</small></div>
+            <div class="mc-d">种果 12.5 + 包装 2 + 运费 2.5 + 杂费税 1.5（详见模块 4）</div>
+          </div>
+          <div class="mc-item mc-profit">
+            <div class="mc-k">剩下的利润</div>
+            <div class="mc-v">3~6<small> 元 / 斤</small></div>
+            <div class="mc-d">也就是一斤净赚几块钱</div>
+          </div>
+          <div class="mc-item mc-profit">
+            <div class="mc-k">一柜 2.7 万斤</div>
+            <div class="mc-v">8~16<small> 万元</small></div>
+            <div class="mc-d">正常行情一柜赚这么多；卖得好（中东、俄罗斯）更多</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="money-card">
+        <h4>卖价和成本，一眼看明白</h4>
+        <div class="bar-block">
+          <div class="bar-row">
+            <div class="bar-lab"><b>卖价</b><span>约 22~25 元/斤</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--blue);"></div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-lab"><b>成本</b><span>约 18~19 元/斤</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:80%;background:var(--amber);"></div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-lab"><b>剩下的利润</b><span>约 3~6 元/斤</span></div>
+            <div class="bar-track"><div class="bar-profit" style="width:22%;"></div></div>
+          </div>
+          <div class="bar-legend">
+            <span><i style="background:var(--blue);"></i>卖价</span>
+            <span><i style="background:var(--amber);"></i>成本</span>
+            <span><i style="background:var(--green);"></i>利润</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="plain">
+        <span class="p-tag">大白话</span>
+        这就像<b>卖菜</b>：去掉所有本钱，一斤赚几块钱，靠走量赚钱。一柜 2.7 万斤，一斤赚 3~6 块，一柜就是 8 万到 16 万。行情好的时候（比如卖去中东、俄罗斯），一柜赚 20 万以上的例子也有。
+      </div>
+
+      <div class="warn">
+        <span class="w-tag">别高兴太早</span>
+        上面算的是<b>"一切顺利"的账</b>。路上果子坏了、价格突然跌了、买家压价，都会吃掉利润。所以行业里都是从"小批量试"开始，跑顺了再加量——这也是模块 6 的第一步为什么是试小单。
+      </div>
+
+      <div class="takeaway">
+        <span class="t-tag">结论</span>
+        <p><b>正常行情，一柜能赚 8 万到 16 万，这笔账值得算。</b>但先小批量试，别一上来压大柜。</p>
+      </div>
+    </div>
+    <div class="page-nav">
+      <button data-goto="m2">上一个</button>
+      <button class="pn-next" data-goto="m4">下一个：钱都花在哪</button>
+    </div>
+  </section>
+
+  <!-- ================= 模块 4：钱都花在哪 ================= -->
+  <section class="view" id="view-m4">
+    <div class="page-head">
+      <button class="back" data-back aria-label="返回"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <span class="ph-title">钱都花在哪</span>
+      <span class="ph-num">模块 4 / 6</span>
+    </div>
+    <div class="page-body">
+      <p class="lead">出口比在国内卖，<b>多出来四笔开销</b>。都讲明白，你算账时别漏了。</p>
+
+      <div class="cost-item">
+        <div class="c-ic">1</div>
+        <div class="c-body">
+          <h4>种果和采果的钱</h4>
+          <p>地和大棚是你自己有的，这里主要算采果的人工。折合下来，一斤大约 12.5 元。</p>
+          <div class="c-v">约 12.5<small> 元 / 斤</small></div>
+        </div>
+      </div>
+      <div class="cost-item">
+        <div class="c-ic">2</div>
+        <div class="c-body">
+          <h4>包装和分选</h4>
+          <p>挑果、装盒、预冷（让果子先凉下来再上路，不然容易坏）。一斤大约 2 元。</p>
+          <div class="c-v">约 2<small> 元 / 斤</small></div>
+        </div>
+      </div>
+      <div class="cost-item">
+        <div class="c-ic">3</div>
+        <div class="c-body">
+          <h4>运费（最容易低估的一项）</h4>
+          <p>省钱路线（陆路+海运）：一斤 2~4 元，几天到东南亚。<b>赶时间的空运：一斤 12~17 元，贵好几倍</b>——走量千万别用空运，只有卖高价货（中东、日本）才划算。</p>
+          <div class="c-v">2~4<small> 元 / 斤（陆海）</small></div>
+        </div>
+      </div>
+      <div class="cost-item">
+        <div class="c-ic">4</div>
+        <div class="c-body">
+          <h4>杂费和税</h4>
+          <p>报关、海关检查、外国收的"进门税"（关税）、国际认证。一斤约 1.5 元。认证（GAP，相当于给果园发一张"好果园"证书）一年几千到一万多块。</p>
+          <div class="c-v">约 1.5<small> 元 / 斤</small></div>
+        </div>
+      </div>
+
+      <div class="plain">
+        <span class="p-tag">大白话</span>
+        <b>啥是"冷链"？</b>就是一路冷藏保鲜的运输。蓝莓娇气，路上不能断冷，断了就容易烂。所以运费里含的"冷藏"是必须花的，省不得。<br><br>
+        <b>啥是"关税"？</b>就是外国政府收的"进门税"。卖去东南亚，拿着咱们和东盟签的协议（RCEP 原产地证），税很少，几乎等于不收。
+      </div>
+
+      <div class="takeaway">
+        <span class="t-tag">结论</span>
+        <p><b>开销大头在种果和运费。</b>想省钱，就走陆路+海运的"省钱路线"，别图快用空运。</p>
+      </div>
+    </div>
+    <div class="page-nav">
+      <button data-goto="m3">上一个</button>
+      <button class="pn-next" data-goto="m5">下一个：别人怎么做成的</button>
+    </div>
+  </section>
+
+  <!-- ================= 模块 5：别人怎么做成的 ================= -->
+  <section class="view" id="view-m5">
+    <div class="page-head">
+      <button class="back" data-back aria-label="返回"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <span class="ph-title">别人怎么做成的</span>
+      <span class="ph-num">模块 5 / 6</span>
+    </div>
+    <div class="page-body">
+      <p class="lead">下面都是<b>真事</b>，云南老乡已经有干成的。看他们的路子，你就知道该咋走了。</p>
+
+      <div class="story">
+        <div class="st-k">云南 · 红河州（全省第一产区）</div>
+        <h4>2022 年第一次出口，两年做到全国第一</h4>
+        <div class="st-v">占全国出口一半，卖去新加坡、阿联酋、日本等 12 个国家</div>
+        <p>红河 2022 年才第一次把蓝莓卖去新加坡，2024 年就成了全国出口第一。海关给开了"快检通道"，6 小时验完，空运 40 小时到海外。</p>
+        <div class="st-src">来源：红河州政府（2025-10）</div>
+      </div>
+      <div class="story">
+        <div class="st-k">云南 · 永仁县</div>
+        <h4>出口量占自己产量的 10%，一周发 15 柜</h4>
+        <div class="st-v">2025 年出口 300 吨、卖了 3000 万</div>
+        <p>县里组织企业一起干，2025 年出口 300 吨、产值 3000 万，远销新加坡、马来西亚等 7 个东南亚国家。做法：县里搭台、企业参加展会拉客户。</p>
+        <div class="st-src">来源：楚雄州农业农村局（2026-08）、永仁县政府（2025-04）</div>
+      </div>
+      <div class="story">
+        <div class="st-k">云南 · 爱莓庄（大企业，供参考）</div>
+        <h4>5 年做到全国产量第一，还拿到外国大单</h4>
+        <div class="st-v">去年营收 29 亿，出口日本、阿联酋及东南亚等十几个国家</div>
+        <p>2020 年才种下第一株蓝莓，5 年做到全国产量第一。在亚洲果蔬展上，泰国正大集团给了它"独家供货"资格，相当于承包了一个大渠道。</p>
+        <div class="st-src">来源：界面新闻（2026-09）、人民网（2025-10）</div>
+      </div>
+      <div class="story">
+        <div class="st-k">云南 · 蒙自翔悦（贸易公司）</div>
+        <h4>2023 年开干，3 年打开 4 个国家</h4>
+        <div class="st-v">印尼、新加坡、越南、吉尔吉斯斯坦，日均出货稳定</div>
+        <p>小公司也能做：从 2023 年开始出口，靠参加国际展会、做好品质，客户越攒越多。</p>
+        <div class="st-src">来源：云南国际贸易单一窗口（2025-03）</div>
+      </div>
+      <div class="story">
+        <div class="st-k">外国参考 · 秘鲁</div>
+        <h4>10 年从"不种蓝莓"做到全球出口第一</h4>
+        <div class="st-v">全球最大蓝莓出口国</div>
+        <p>秘鲁 10 年前几乎不种蓝莓，靠政府支持 + 企业开拓市场 + 全程冷链，10 年做到全球出口第一。说明这条路真能走通，而且能走很大。</p>
+        <div class="st-src">来源：IFPRI（2025-04）</div>
+      </div>
+
+      <div class="plain">
+        <span class="p-tag">大白话</span>
+        发现规律没有？<b>他们的路子都一样：先办证 → 先小单试 → 再放量。</b>没有谁一上来就大卖。你照着这个顺序走，风险最小。
+      </div>
+
+      <div class="takeaway">
+        <span class="t-tag">结论</span>
+        <p><b>你不是第一个吃螃蟹的，老乡已经把路蹚出来了。</b>照着走，稳。</p>
+      </div>
+    </div>
+    <div class="page-nav">
+      <button data-goto="m4">上一个</button>
+      <button class="pn-next" data-goto="m6">下一个：第一步干什么</button>
+    </div>
+  </section>
+
+  <!-- ================= 模块 6：第一步干什么 ================= -->
+  <section class="view" id="view-m6">
+    <div class="page-head">
+      <button class="back" data-back aria-label="返回"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <span class="ph-title">第一步干什么</span>
+      <span class="ph-num">模块 6 / 6</span>
+    </div>
+    <div class="page-body">
+      <p class="lead">别想太复杂，<b>就四步</b>。每一步都有时间，照着做就行。</p>
+
+      <div class="step2">
+        <div class="s-ic">1</div>
+        <div class="s-body">
+          <h4>办证：果园和包装厂去海关登记</h4>
+          <p>1~3 个月能办好，不花钱，就是交材料。海关受理后 20 个工作日给答复。</p>
+          <div class="s-src">依据：海关总署《出境水果检验检疫监督管理办法》</div>
+        </div>
+      </div>
+      <div class="step2">
+        <div class="s-ic">2</div>
+        <div class="s-body">
+          <h4>找买家：展会或贸易公司</h4>
+          <p>每年有亚洲果蔬展，摆个摊、见见客户；或者找做水果出口的贸易公司合作，让他们帮你卖，你负责供货。</p>
+          <div class="s-src">老乡例子：蒙自翔悦、永仁都是这么拉客户的</div>
+        </div>
+      </div>
+      <div class="step2">
+        <div class="s-ic">3</div>
+        <div class="s-body">
+          <h4>试小单：先发几百斤</h4>
+          <p>空运一小批去香港或新加坡，看看路上损耗多少、老外认不认，价格合不合适。这一单就是交学费，别指望赚钱。</p>
+        </div>
+      </div>
+      <div class="step2">
+        <div class="s-ic">4</div>
+        <div class="s-body">
+          <h4>再放量：跑通了发大柜</h4>
+          <p>试单没问题，就发整柜（陆路+海运）去马来西亚、泰国，开始走量赚钱。</p>
+        </div>
+      </div>
+
+      <div class="plain">
+        <span class="p-tag">大白话</span>
+        <b>啥是"出口资质"？</b>就像开饭馆要办营业执照——水果卖到国外，也要先在海关登记，果园和包装厂都要办。这是第一步，不办啥都干不了。
+      </div>
+
+      <div class="money-card">
+        <h4>给你一个时间表</h4>
+        <div class="timeline">
+          <div class="tl-row"><div class="tl-dot">6</div><div class="tl-body"><h4>半年内</h4><p>证办好 + 试单完成，第一单发出去</p></div></div>
+          <div class="tl-row"><div class="tl-dot">1y</div><div class="tl-body"><h4>一年内</h4><p>月月有柜，出口成固定生意</p></div></div>
+          <div class="tl-row"><div class="tl-dot">3y</div><div class="tl-body"><h4>两三年</h4><p>出口占到自家产量一两成（对标永仁 10%）</p></div></div>
+        </div>
+      </div>
+
+      <div class="takeaway">
+        <span class="t-tag">结论</span>
+        <p><b>这个月就能去海关问登记的事，越早办越主动。</b>证不花钱，先办上。</p>
+      </div>
+    </div>
+    <div class="page-nav">
+      <button data-goto="m5">上一个</button>
+      <button class="pn-next" data-goto="home">看完了，回首页</button>
+    </div>
+  </section>
+
+  <!-- ================= 数据来源 ================= -->
+  <section class="view" id="view-src">
+    <div class="page-head">
+      <button class="back" data-back aria-label="返回"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <span class="ph-title">数据来源</span>
+    </div>
+    <div class="page-body">
+      <p class="lead">这份手册里的数字<b>都能查</b>。主要来自下面这些公开渠道（检索时间：2026 年 10 月）。</p>
+      <div class="src-list">
+        <div><b>01</b><span>云南省农业农村厅、新华网（2025-07）——云南蓝莓面积、产量、出口占比</span></div>
+        <div><b>02</b><span>人民日报中国城市报（2026-04）——红河亩产、亩收入、国内价格回落原因</span></div>
+        <div><b>03</b><span>红河州政府（2025-10）——红河出口 1425 吨占全国一半、快检 6 小时、空运 40 小时</span></div>
+        <div><b>04</b><span>海关数据（Agronometrics / FreshFruitPortal，2026-04）——出口量 1011→7098 吨、均价 $7.16/kg</span></div>
+        <div><b>05</b><span>亚洲水果（2026-06，引海关总署）——2026 年出口额、新加坡价格低 30%~50%、吉隆坡 7 美元/kg</span></div>
+        <div><b>06</b><span>中国经济网 / 云南日报（2025-2026）——全球市场 320 亿美元</span></div>
+        <div><b>07</b><span>央广网（2026-03）——全国 158 万亩、81 万吨、国内需求缺口</span></div>
+        <div><b>08</b><span>海关总署（2026）——出境水果果园/包装厂注册登记流程</span></div>
+        <div><b>09</b><span>云南网（2026-01）——RCEP 原产地证书给蓝莓出口东盟减税</span></div>
+        <div><b>10</b><span>界面新闻（2026-09）、人民网（2025-10）——爱莓庄案例</span></div>
+        <div><b>11</b><span>楚雄州农业农村局（2026-08）、永仁县政府（2025-04）——永仁案例</span></div>
+        <div><b>12</b><span>云南国际贸易单一窗口（2025-03）——蒙自翔悦案例</span></div>
+        <div><b>13</b><span>IFPRI（2025-04）——秘鲁案例</span></div>
+        <div><b>14</b><span>国家外汇管理局黑龙江分局（2025-08）、中国日报网（2026-05）——俄罗斯市场</span></div>
+      </div>
+      <div class="disclaimer">
+        <b>怎么算的、哪里是估的：</b>① "一柜 2.7 万斤"按 40 尺冷藏柜装 12~15 吨（中值 13.5 吨）估算；② "种果成本 12.5 元/斤"按红河"亩收入 8 万、亩产 2000 公斤"倒推；③ 运费 2~3 元/斤（陆海）、12~17 元/斤（空运）取自货代公开报价区间；④ 出口卖价 22~25 元/斤按 2025 年海关均价 $7.16/kg（约 25.5 元/斤）及其保守下修取值；⑤ "一柜赚 8~16 万"为正常行情区间估算，实际以成交价为准。汇率按 1 美元≈7.1 元估算。<br><br>
+        落地前请以海关、检验检疫、税务及目标国现行规定为准。这份手册只帮你判断"要不要做"，不做投资承诺。
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+/* ===== 简易路由：hash 切视图 ===== */
+var VIEWS = ['home','m1','m2','m3','m4','m5','m6','src'];
+function currentView(){
+  var h = location.hash.replace(/^#\//,'');
+  return VIEWS.indexOf(h) >= 0 ? h : 'home';
+}
+function render(){
+  var v = currentView();
+  VIEWS.forEach(function(id){
+    var el = document.getElementById('view-' + id);
+    if(el){ el.classList.toggle('active', id === v); }
+  });
+  window.scrollTo(0,0);
+}
+window.addEventListener('hashchange', render);
+render();
+
+/* ===== 返回 / 跳转 ===== */
+document.addEventListener('click', function(e){
+  var back = e.target.closest('[data-back]');
+  if(back){
+    e.preventDefault();
+    location.hash = '#/home';
+    return;
+  }
+  var goto = e.target.closest('[data-goto]');
+  if(goto){
+    e.preventDefault();
+    location.hash = '#/' + goto.getAttribute('data-goto');
+    return;
+  }
+});
+</script>
+</body>
+</html>
